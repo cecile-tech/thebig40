@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE BIG 4-0 · New York City</title>
+<meta name="description" content="You're invited. November 21-23, 2026. New York City.">
+<meta property="og:title" content="THE BIG 4-0 · You're Invited">
+<meta property="og:description" content="A weekend in NYC you won't forget. November 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DM+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&family=PP+Mori:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#c9a96e;
+  --gold-light:#e8d5b0;
+  --gold-dim:rgba(201,169,110,0.15);
+  --cream:#f5f0eb;
+  --dark:#060606;
+  --dim:#888;
+  --faint:#1a1a1a;
+  --faint2:#111;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+*::before,*::after{pointer-events:none}
+
+body{
+  background:var(--dark);
+  color:var(--cream);
+  font-family:'Cormorant Garamond',serif;
+  min-height:100vh;
+  overflow-x:hidden;
+  padding-bottom:120px;
+}
+
+/* Grain overlay for luxury feel */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none;
+  z-index:999;
+  opacity:0.6;
+}
+
+/* Decorative vertical line */
+body::after{
+  content:'';
+  position:fixed;
+  top:0;right:11%;
+  width:1px;height:100vh;
+  background:linear-gradient(to bottom,transparent,rgba(201,169,110,.12) 20%,rgba(201,169,110,.12) 80%,transparent);
+  transform:rotate(-4deg);
+  transform-origin:top;
+  z-index:0;
+  pointer-events:none;
+}
+
+.dm{font-family:'DM Sans',sans-serif}
+.bask{font-family:'Cormorant Garamond',serif}
+.instr{font-family:'Instrument Serif',serif}
+.eb{font-family:'EB Garamond',serif}
+.hl{color:#d4b87a;font-weight:700}
+
+/* Animations */
+@keyframes fu{from{opacity:0;transform:translateY(36px)}to{opacity:1;transform:translateY(0)}}
+@keyframes glow{0%,100%{box-shadow:0 0 20px rgba(201,169,110,.1)}50%{box-shadow:0 0 40px rgba(201,169,110,.3)}}
+@keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes pulse-gold{0%,100%{opacity:.6}50%{opacity:1}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+.fu{animation:fu 1s cubic-bezier(.16,1,.3,1) both}
+.d0{animation-delay:0s}.d1{animation-delay:.12s}.d2{animation-delay:.24s}
+.d3{animation-delay:.36s}.d4{animation-delay:.48s}.d5{animation-delay:.6s}
+.d6{animation-delay:.72s}.d7{animation-delay:.84s}.d8{animation-delay:.96s}
+.d9{animation-delay:1.08s}.d10{animation-delay:1.2s}
+
+button{font-family:inherit;cursor:pointer}
+input{font-family:inherit}
+.page{display:none}.page.active{display:block}
+
+/* Layout */
+.wrap{max-width:680px;margin:0 auto;padding:48px 24px;position:relative;z-index:2}
+
+/* ─── HERO ─── */
+.hero{
+  position:relative;border-radius:16px;overflow:hidden;
+  margin-bottom:36px;
+  box-shadow:0 40px 100px rgba(0,0,0,.7),0 0 0 1px rgba(201,169,110,.12);
+}
+.hero img{width:100%;display:block}
+.hero-grad{
+  position:absolute;bottom:0;left:0;right:0;height:75%;
+  background:linear-gradient(transparent,rgba(6,6,6,.99))
+}
+.hero-text{position:absolute;bottom:24px;left:24px;right:24px}
+
+/* ─── GALLERY ─── */
+.gs{display:flex;gap:8px;overflow:hidden;height:auto;margin-bottom:36px}
+.gi{border-radius:10px;overflow:hidden;cursor:pointer;transition:all .7s cubic-bezier(.4,0,.2,1);position:relative;flex:0 0 42px;opacity:.35}
+.gi.active{flex:0 0 60%;opacity:1}
+.gi img{width:100%;height:200px;object-fit:cover;display:block;transition:all .7s ease}
+.gi.active img{height:280px;object-fit:contain;background:#0a0a0a}
+.gl{position:absolute;bottom:8px;left:10px;font-size:9px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+.dots{display:flex;justify-content:center;gap:6px;margin-top:-24px;margin-bottom:36px;position:relative;z-index:2}
+.dot{height:2px;border-radius:2px;transition:all .4s ease;cursor:pointer}
+.dot.active{width:24px;background:var(--gold)}
+.dot:not(.active){width:6px;background:#2a2a2a}
+
+/* ─── PILLS ─── */
+.pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0 auto 40px;max-width:520px}
+.pill{
+  display:flex;align-items:center;gap:8px;padding:10px 20px;
+  border-radius:100px;border:1px solid rgba(201,169,110,.15);
+  background:rgba(201,169,110,.03);transition:all .3s;
+}
+.pill:hover{border-color:rgba(201,169,110,.4);background:rgba(201,169,110,.08)}
+.pill-text{font-size:12px;letter-spacing:.08em;color:#aaa;text-transform:uppercase}
+.pill-icon{font-size:16px}
+
+/* ─── DETAIL CARD ─── */
+.dcard{
+  border-radius:16px;padding:28px;
+  border:1px solid rgba(201,169,110,.1);
+  background:rgba(201,169,110,.02);
+  margin-bottom:36px;position:relative;overflow:hidden;
+}
+.dcard::before{
+  content:'';position:absolute;top:-50%;right:-50%;
+  width:200%;height:200%;
+  background:radial-gradient(circle at 70% 30%,rgba(201,169,110,.05),transparent 50%);
+  pointer-events:none;
+}
+
+/* ─── THIRTY PHOTO ─── */
+.thirty{border-radius:16px;overflow:hidden;border:1px solid rgba(201,169,110,.12);margin-bottom:40px;position:relative}
+.thirty img{width:100%;display:block}
+.thirty-grad{position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(transparent,rgba(6,6,6,.97))}
+
+/* ─── CTA ─── */
+.cta{
+  display:block;width:100%;max-width:420px;margin:0 auto;padding:22px;
+  border-radius:8px;font-size:13px;letter-spacing:.25em;text-transform:uppercase;
+  text-align:center;border:1px solid var(--gold);color:var(--gold);
+  background:transparent;transition:all .4s ease;position:relative;overflow:hidden;
+}
+.cta::before{
+  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(201,169,110,.12),transparent);
+  transition:left .6s;pointer-events:none;
+}
+.cta:hover{background:var(--gold);color:var(--dark)}
+.cta:hover::before{left:100%}
+
+/* ─── REACTIONS ─── */
+.rbtn{
+  background:rgba(255,255,255,.02);border:1px solid var(--faint);
+  border-radius:12px;padding:12px 16px;font-size:22px;
+  transition:all .25s;position:relative;
+}
+.rbtn:hover{border-color:var(--gold);transform:scale(1.18);background:rgba(201,169,110,.06)}
+.rcount{
+  position:absolute;top:-8px;right:-8px;
+  background:var(--gold);color:var(--dark);
+  border-radius:12px;font-size:9px;font-weight:700;
+  padding:2px 7px;min-width:14px;text-align:center;
+}
+
+/* ─── COMMENT BOX ─── */
+.cbox{background:rgba(255,255,255,.02);border-radius:10px;padding:14px 18px;margin-bottom:10px;font-size:16px;color:#b8b0a5;border-left:2px solid var(--gold)}
+.cinput{flex:1;background:transparent;border:1px solid var(--faint);border-radius:10px;color:var(--cream);font-size:16px;padding:14px 18px;outline:none;font-family:'Cormorant Garamond',serif}
+.cinput:focus{border-color:var(--gold)}
+.cpost{font-size:11px;background:var(--gold);color:var(--dark);border:none;border-radius:10px;padding:14px 22px;letter-spacing:.1em;font-weight:500}
+
+/* ─── RSVP BUTTONS ─── */
+.ropt{
+  font-size:13px;letter-spacing:.08em;text-transform:uppercase;
+  background:transparent;color:var(--cream);border:1px solid #2a2a2a;
+  padding:16px 28px;transition:all .3s;border-radius:8px;
+}
+.ropt.sel{background:var(--gold);color:var(--dark);border-color:var(--gold)}
+.ropt:hover:not(.sel){border-color:var(--gold)}
+.sbtn{
+  font-size:13px;letter-spacing:.2em;text-transform:uppercase;
+  width:100%;background:#111;color:#333;border:none;
+  padding:22px;transition:all .4s;border-radius:8px;cursor:default;
+}
+.sbtn.rdy{background:var(--gold);color:var(--dark);cursor:pointer;animation:glow 2s ease-in-out infinite}
+
+/* ─── GUEST LIST ─── */
+.ga{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.gr{display:flex;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid var(--faint);position:relative}
+.back{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#444;background:none;border:none;cursor:pointer;margin-bottom:48px;padding:0;transition:color .3s}
+.back:hover{color:var(--gold)}
+
+/* ─── STICKY SPOTIFY ─── */
+.spot{position:fixed;bottom:0;left:0;right:0;z-index:100;background:linear-gradient(transparent,rgba(6,6,6,.97) 25%);padding:10px 20px 14px;display:flex;justify-content:center}
+.nyc{display:inline-block;vertical-align:middle;width:14px;height:14px}
+
+/* ─── PLUS ONE ─── */
+.plus1-wrap{margin-top:24px;padding:20px;border-radius:12px;border:1px solid rgba(201,169,110,.1);background:rgba(201,169,110,.02)}
+.plus1-toggle{display:flex;align-items:center;gap:14px;cursor:pointer}
+.plus1-check{width:24px;height:24px;border-radius:6px;border:2px solid #333;display:flex;align-items:center;justify-content:center;transition:all .3s;flex-shrink:0}
+.plus1-check.on{background:var(--gold);border-color:var(--gold)}
+.plus1-name{margin-top:14px;display:none}
+.plus1-name.show{display:block}
+.plus1-name input{width:100%;background:transparent;border:none;border-bottom:1px solid #333;color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:20px;padding:8px 0;outline:none}
+.plus1-name input:focus{border-bottom-color:var(--gold)}
+
+/* ─── GUEST REACTIONS ─── */
+.gr-react{display:flex;gap:4px;margin-left:auto;flex-shrink:0}
+.gr-emoji{font-size:14px;padding:4px 6px;border-radius:6px;border:1px solid transparent;background:transparent;transition:all .2s;position:relative;cursor:pointer}
+.gr-emoji:hover{background:rgba(201,169,110,.08);border-color:rgba(201,169,110,.2)}
+.gr-emoji .gr-ec{position:absolute;top:-5px;right:-5px;font-size:7px;background:var(--gold);color:var(--dark);border-radius:8px;padding:1px 4px;font-weight:700;display:block}
+.gr-comments{padding:8px 0 8px 62px;display:none}
+.gr-comments.open{display:block}
+.gr-comment-item{font-size:13px;color:#999;padding:4px 0;border-bottom:1px solid #111}
+.gr-comment-add{display:flex;gap:6px;margin-top:6px}
+.gr-comment-add input{flex:1;background:transparent;border:1px solid #1a1a1a;border-radius:6px;color:var(--cream);font-size:13px;padding:8px 12px;outline:none;font-family:'DM Sans',sans-serif}
+.gr-comment-add input:focus{border-color:var(--gold)}
+.gr-comment-add button{font-size:9px;background:var(--gold);color:var(--dark);border:none;border-radius:6px;padding:8px 14px;letter-spacing:.08em}
+.gr-toggle-comments{font-size:10px;color:#555;background:none;border:none;padding:2px 6px;cursor:pointer;transition:color .2s}
+.gr-toggle-comments:hover{color:var(--gold)}
+
+/* ─── THE STAR: LIFE IS SHORT ─── */
+.life-is-short-section {
+  position:relative;
+  margin:0 -24px 52px;
+  padding:60px 24px 64px;
+  overflow:hidden;
+  text-align:center;
+}
+.life-is-short-section::before {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 50%, rgba(201,169,110,0.07) 0%, transparent 70%),
+    linear-gradient(to bottom, transparent, rgba(201,169,110,0.03) 50%, transparent);
+  pointer-events:none;
+}
+.life-is-short-section::after {
+  content:'';
+  position:absolute;
+  top:0;left:0;right:0;height:1px;
+  background:linear-gradient(to right, transparent, rgba(201,169,110,0.25) 30%, rgba(201,169,110,0.25) 70%, transparent);
+}
+.lis-pre {
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;
+  letter-spacing:.45em;
+  color:rgba(201,169,110,0.55);
+  text-transform:uppercase;
+  margin-bottom:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+.lis-pre span{display:inline-block;width:32px;height:1px;background:rgba(201,169,110,0.3)}
+
+/* THE BIG LINE */
+.lis-main {
+  font-family:'Instrument Serif',serif;
+  font-style:italic;
+  font-size:clamp(34px, 9vw, 72px);
+  line-height:1.05;
+  color:var(--cream);
+  letter-spacing:-0.01em;
+  margin-bottom:0;
+  position:relative;
+}
+.lis-main em {
+  font-style:normal;
+  display:block;
+  background: linear-gradient(
+    135deg,
+    #e8d5b0 0%,
+    #c9a96e 25%,
+    #f0e4c8 50%,
+    #c9a96e 75%,
+    #a8803e 100%
+  );
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  animation:shimmer 4s linear infinite;
+  font-family:'Instrument Serif',serif;
+  font-style:italic;
+  font-size:clamp(48px, 13vw, 110px);
+  line-height:0.9;
+  letter-spacing:-0.02em;
+}
+.lis-main em.book-the {
+  font-size:clamp(28px, 7vw, 62px);
+  display:inline;
+  -webkit-text-fill-color:var(--cream);
+  background:none;
+  color:var(--cream);
+  letter-spacing:.04em;
+}
+.lis-main em.flight {
+  display:block;
+  font-size:clamp(56px, 15vw, 130px);
+  line-height:0.85;
+  margin-top:-4px;
+}
+.lis-emoji-row {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  margin-top:32px;
+  font-size:28px;
+}
+.lis-emoji-row span {
+  display:inline-block;
+  animation:float 3s ease-in-out infinite;
+  cursor:default;
+  user-select:none;
+}
+.lis-emoji-row span:nth-child(2){animation-delay:.4s}
+.lis-emoji-row span:nth-child(3){animation-delay:.8s}
+.lis-emoji-row span:nth-child(4){animation-delay:1.2s}
+.lis-emoji-row span:nth-child(5){animation-delay:1.6s}
+.lis-sub {
+  margin-top:28px;
+  font-family:'DM Sans',sans-serif;
+  font-size:11px;
+  letter-spacing:.3em;
+  color:rgba(201,169,110,0.5);
+  text-transform:uppercase;
+}
+
+/* ─── INVITE HEADER: elevated ─── */
+.invite-eyebrow {
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  margin-bottom:16px;
+}
+.invite-eyebrow-line {
+  width:48px;height:1px;
+  background:linear-gradient(to right, transparent, rgba(201,169,110,0.5));
+}
+.invite-eyebrow-line.right {
+  background:linear-gradient(to left, transparent, rgba(201,169,110,0.5));
+}
+
+/* ─── NYC ENERGY BADGE ─── */
+.nyc-badge {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:rgba(201,169,110,0.06);
+  border:1px solid rgba(201,169,110,0.2);
+  border-radius:100px;
+  padding:8px 18px;
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;
+  letter-spacing:.3em;
+  color:rgba(201,169,110,0.8);
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+
+/* ─── SECTION DIVIDER ─── */
+.divider {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  margin:44px 0;
+  color:#2a2a2a;
+}
+.divider-line{flex:1;height:1px;background:var(--faint2)}
+.divider-mark{font-size:12px;color:#333}
+
+/* ─── EMOJI VIBES STRIP ─── */
+.vibes-strip {
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-bottom:40px;
+  font-size:24px;
+}
+.vibes-strip span {
+  display:inline-block;
+  transition:transform .2s;
+  cursor:default;
+  user-select:none;
+}
+.vibes-strip span:hover{transform:scale(1.3) rotate(-5deg)}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#1e1e1e;border-radius:4px}
+</style>
+</head>
+<body>
+
+<!-- Sticky Spotify -->
+<div class="spot">
+  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7HcGQK8QvzKo7pck0rJvCy?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
+
+<!-- ═══ LANDING ═══ -->
+<div id="p-land" class="page active"><div class="wrap">
+
+  <!-- Eyebrow -->
+  <div class="fu d0" style="text-align:center;margin-bottom:40px">
+    <div class="nyc-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="width:12px;height:12px"><rect x="3" y="8" width="5" height="14"/><rect x="10" y="3" width="5" height="19"/><rect x="17" y="10" width="5" height="12"/></svg>
+      New York City · November 2026
+    </div>
+    <div class="invite-eyebrow">
+      <div class="invite-eyebrow-line"></div>
+      <div class="dm" style="font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:rgba(201,169,110,0.5)">You're Invited</div>
+      <div class="invite-eyebrow-line right"></div>
+    </div>
+    <div class="eb" style="font-size:14px;letter-spacing:.4em;color:#444;text-transform:uppercase;font-style:italic">Save the Date</div>
+  </div>
+
+  <!-- Hero Image -->
+  <div class="hero fu d1">
+    <img src="https://images.unsplash.com/photo-1490644658840-3f2e3f8c5625?w=900&q=80&auto=format&fit=crop" alt="New York City" onerror="this.src='https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=900&q=80'">
+    <div class="hero-grad"></div>
+    <div class="hero-text">
+      <div class="dm" style="font-size:9px;letter-spacing:.4em;color:rgba(201,169,110,.7);text-transform:uppercase;margin-bottom:12px">The Big</div>
+      <div class="bask" style="font-weight:700;font-size:clamp(64px,18vw,130px);line-height:.82;color:var(--cream);letter-spacing:-.02em">4<span style="color:var(--gold)">0</span></div>
+      <div class="dm" style="font-size:11px;letter-spacing:.3em;color:#888;margin-top:12px;text-transform:uppercase">November 21 – 23 · 2026</div>
+    </div>
+  </div>
+
+  <!-- Vibes strip -->
+  <div class="fu d2 vibes-strip">
+    <span>🗽</span><span>✈️</span><span>🥂</span><span>🌃</span><span>🎂</span><span>🔥</span><span>🎉</span>
+  </div>
+
+  <!-- Gallery -->
+  <div class="gs fu d2" id="gstrip"></div>
+  <div class="dots fu d3" id="gdots"></div>
+
+  <!-- Details pills -->
+  <div class="fu d3 pills">
+    <div class="pill"><span class="pill-icon">📅</span><span class="pill-text dm">Nov 21–23, 2026</span></div>
+    <div class="pill"><span class="pill-icon">🗽</span><span class="pill-text dm">New York City</span></div>
+    <div class="pill"><span class="pill-icon">✈️</span><span class="pill-text dm">CDG → JFK</span></div>
+    <div class="pill"><span class="pill-icon">🥂</span><span class="pill-text dm">Three days of chaos</span></div>
+  </div>
+
+  <!-- Detail card -->
+  <div class="dcard fu d4">
+    <div class="dm" style="font-size:9px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:10px">
+      <span style="display:inline-block;width:20px;height:1px;background:var(--gold)"></span>
+      The Plan
+    </div>
+    <div style="display:grid;gap:18px">
+      <div style="display:flex;gap:16px;align-items:flex-start">
+        <span style="font-size:20px">🛬</span>
+        <div>
+          <div class="dm" style="font-size:10px;letter-spacing:.2em;color:#555;text-transform:uppercase;margin-bottom:4px">Friday · Nov 21</div>
+          <div class="bask" style="font-size:18px;color:var(--cream);font-weight:500">Touch down. Hit the city. First drinks on me.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start">
+        <span style="font-size:20px">🌆</span>
+        <div>
+          <div class="dm" style="font-size:10px;letter-spacing:.2em;color:#555;text-transform:uppercase;margin-bottom:4px">Saturday · Nov 22</div>
+          <div class="bask" style="font-size:18px;color:var(--cream);font-weight:500">The main event. Details dropping soon. Dress accordingly.</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:flex-start">
+        <span style="font-size:20px">☕</span>
+        <div>
+          <div class="dm" style="font-size:10px;letter-spacing:.2em;color:#555;text-transform:uppercase;margin-bottom:4px">Sunday · Nov 23</div>
+          <div class="bask" style="font-size:18px;color:var(--cream);font-weight:500">Brunch, hangovers, goodbyes. Until next time.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ LIFE IS SHORT — THE HERO LINE ═══ -->
+  <div class="fu d5 life-is-short-section">
+    <div class="lis-pre">
+      <span></span>
+      a reminder
+      <span></span>
+    </div>
+    <div class="lis-main">
+      <span style="display:block;font-size:clamp(22px,5vw,42px);letter-spacing:.06em;color:#888;font-style:italic;font-family:'Instrument Serif',serif;margin-bottom:8px">life is short.</span>
+      <em class="book-the">book&nbsp;the&nbsp;</em><em class="flight">flight.</em>
+    </div>
+    <div class="lis-emoji-row">
+      <span>🛫</span>
+      <span>🗽</span>
+      <span>🎂</span>
+      <span>🥂</span>
+      <span>✨</span>
+    </div>
+    <div class="lis-sub">November 21–23 · New York City</div>
+  </div>
+
+  <!-- Throwback photo -->
+  <div class="thirty fu d6">
+    <img src="https://images.unsplash.com/photo-1464207687429-7505649dae38?w=900&q=80&auto=format&fit=crop" alt="Brooklyn Bridge" onerror="this.src='https://images.unsplash.com/photo-1573455494060-c5595004fb6c?w=900'">
+    <div class="thirty-grad"></div>
+    <div style="position:absolute;bottom:16px;left:20px;right:20px">
+      <div class="dm" style="font-size:9px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:6px">Brooklyn Bridge · The 30th · 2016</div>
+      <div style="font-size:clamp(15px,3.2vw,20px);font-weight:400;color:#e8e0d8;line-height:1.6">The 30th crew. You know who you are. <span style="font-style:italic;color:var(--gold)">If you were there then, you better be here now.</span> No excuses. 😏</div>
+    </div>
+  </div>
+
+  <!-- Coming soon + RSVP deadline -->
+  <div class="fu d7" style="text-align:center;margin-bottom:36px">
+    <p class="dm" style="font-size:11px;color:rgba(201,169,110,.6);letter-spacing:.2em;font-weight:400;margin-bottom:6px;text-transform:uppercase">📬 Full invite coming soon</p>
+    <p class="dm" style="font-size:11px;color:#555;letter-spacing:.1em;margin-bottom:0;text-transform:uppercase">RSVP by July 31st · Don't wait</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="fu d7" style="margin-bottom:12px">
+    <button class="cta dm" onclick="go('rsvp')">✈️ &nbsp;I'll be there</button>
+  </div>
+  <div class="fu d7" style="text-align:center;margin-bottom:0">
+    <button class="dm" onclick="go('list')" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;background:transparent;color:#444;border:none;padding:14px 32px;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#444'">
+      See who's coming →
+    </button>
+  </div>
+
+  <!-- Confirmed count -->
+  <div id="ccount" class="fu d8" style="margin-top:40px;text-align:center;display:none">
+    <span class="bask" style="font-weight:700;color:var(--gold);font-size:32px" id="cnum"></span>
+    <span class="dm" style="margin-left:8px;font-size:11px;letter-spacing:.2em;color:#555;text-transform:uppercase" id="clbl"></span>
+    <div style="margin-top:6px;font-size:18px">🎉</div>
+  </div>
+
+  <div class="divider fu d8"><div class="divider-line"></div><div class="divider-mark">✦</div><div class="divider-line"></div></div>
+
+  <!-- Reactions + Comments -->
+  <div class="fu d8">
+    <div style="text-align:center;margin-bottom:24px">
+      <div class="dm" style="font-size:9px;letter-spacing:.4em;color:#3a3a3a;text-transform:uppercase;margin-bottom:16px">React 👇</div>
+      <div id="rbar" style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap"></div>
+    </div>
+    <div style="margin-top:28px">
+      <div class="dm" style="font-size:9px;letter-spacing:.4em;color:#3a3a3a;text-transform:uppercase;margin-bottom:14px;text-align:center">Leave a note 💬</div>
+      <div id="clist"></div>
+      <div style="display:flex;gap:10px;margin-top:12px">
+        <input id="cinp" class="cinput" placeholder="Say something..." onkeydown="if(event.key==='Enter')pc()">
+        <button class="cpost dm" onclick="pc()">Post</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="margin-top:60px;padding-top:24px;border-top:1px solid #0e0e0e;text-align:center">
+    <span class="dm" style="font-size:7px;letter-spacing:.5em;color:#1e1e1e;text-transform:uppercase">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1e1e1e" stroke-width="1.5" style="width:10px;height:10px;vertical-align:middle"><rect x="3" y="8" width="5" height="14"/><rect x="10" y="3" width="5" height="19"/><rect x="17" y="10" width="5" height="12"/></svg>
+      &nbsp;CDG → JFK · November 2026&nbsp;
+      <svg viewBox="0 0 24 24" fill="none" stroke="#1e1e1e" stroke-width="1.5" style="width:10px;height:10px;vertical-align:middle"><rect x="3" y="8" width="5" height="14"/><rect x="10" y="3" width="5" height="19"/><rect x="17" y="10" width="5" height="12"/></svg>
+    </span>
+  </div>
+
+</div></div>
+
+<!-- ═══ RSVP ═══ -->
+<div id="p-rsvp" class="page"><div class="wrap" style="max-width:540px">
+  <button class="back dm" onclick="go('land')">← Back</button>
+  <div id="rf">
+    <div class="bask fu" style="font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(52px,12vw,84px);line-height:.88;margin-bottom:10px">COUNT ME IN</div>
+    <div class="fu bask" style="font-style:italic;font-size:24px;font-weight:400;color:var(--gold);margin-bottom:6px">Will you be there? 🗽</div>
+    <div class="fu dm" style="font-size:10px;color:#555;letter-spacing:.12em;margin-bottom:48px;text-transform:uppercase">RSVP by July 31st</div>
+    <div class="fu" style="margin-bottom:36px">
+      <label class="dm" style="font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#555;display:block;margin-bottom:14px">Your name</label>
+      <input id="rn" type="text" placeholder="First & last name" style="width:100%;background:transparent;border:none;border-bottom:1px solid #2a2a2a;color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:28px;padding:14px 0;outline:none;transition:border-color .3s" onfocus="this.style.borderBottomColor='#c9a96e'" onblur="this.style.borderBottomColor='#2a2a2a'">
+    </div>
+    <div class="fu" style="margin-bottom:36px">
+      <label class="dm" style="font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#555;display:block;margin-bottom:16px">Your answer</label>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="ropt dm" data-s="coming" onclick="ss(this)">✦ I'll be there</button>
+        <button class="ropt dm" data-s="maybe" onclick="ss(this)">◎ Trying my best</button>
+        <button class="ropt dm" data-s="not coming" onclick="ss(this)">— Can't make it</button>
+      </div>
+    </div>
+    <div class="plus1-wrap fu">
+      <div class="plus1-toggle" onclick="tp1()">
+        <div class="plus1-check" id="p1c">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:none" id="p1s"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <div>
+          <div class="dm" style="font-size:13px;color:var(--cream)">Bringing a +1 👫</div>
+          <div class="dm" style="font-size:10px;color:#555;margin-top:2px">Partner, spouse, significant other</div>
+        </div>
+      </div>
+      <div class="plus1-name" id="p1n">
+        <input id="p1i" type="text" placeholder="Their name" onfocus="this.style.borderBottomColor='#c9a96e'" onblur="this.style.borderBottomColor='#333'">
+      </div>
+    </div>
+    <button id="rsub" class="sbtn dm" onclick="sr()" disabled style="margin-top:36px">Lock it in 🔒</button>
+  </div>
+  <div id="rsuc" style="display:none;text-align:center;padding-top:48px">
+    <div class="bask" style="font-weight:700;font-size:clamp(52px,12vw,84px);line-height:.88;margin-bottom:18px" id="st"></div>
+    <p id="sm" class="bask" style="font-style:italic;font-size:22px;color:var(--gold);margin-bottom:16px"></p>
+    <div style="font-size:40px;margin-bottom:40px" id="suc-emoji"></div>
+    <button class="cta dm" onclick="go('list')">See who's coming →</button>
+  </div>
+</div></div>
+
+<!-- ═══ GUEST LIST ═══ -->
+<div id="p-list" class="page"><div class="wrap" style="max-width:620px">
+  <button class="back dm" onclick="go('land')">← Back</button>
+  <div class="fu">
+    <div class="bask" style="font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(52px,12vw,76px);line-height:.88;margin-bottom:10px">THE LIST</div>
+    <div class="bask" style="font-style:italic;font-size:22px;color:var(--gold);margin-bottom:52px">If your name's not here yet, fix that. 👀</div>
+  </div>
+  <div id="gsec"></div>
+  <div style="margin-top:36px;padding-top:36px;border-top:1px solid var(--faint)">
+    <button class="cta dm" style="max-width:100%" onclick="go('rsvp')">I'll be there ✈️</button>
+  </div>
+</div></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+var db=null;
+try{
+  firebase.initializeApp({apiKey:"AIzaSyAUNBnZALzSIo3bjgk6BQTge0HFEP9hRLc",authDomain:"the-big-40.firebaseapp.com",projectId:"the-big-40",storageBucket:"the-big-40.firebasestorage.app",messagingSenderId:"53708654298",appId:"1:53708654298:web:05acfc497314d4482747e3"});
+  db=firebase.firestore();
+}catch(e){console.log('Firebase not available, running in offline mode');}
+
+let G=[],R={},C=[],GR={},GC_data={},sel=null,cp=0,p1=false;
+const GC=7;
+
+// Gallery data
+const gallery=[
+  {src:"https://images.unsplash.com/photo-1546484396-fb3fc6f95f98?w=600&q=80",label:"Times Square"},
+  {src:"https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80",label:"Manhattan"},
+  {src:"https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?w=600&q=80",label:"Brooklyn Bridge"},
+  {src:"https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80",label:"Central Park"},
+  {src:"https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80",label:"Fine Dining"},
+  {src:"https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=600&q=80",label:"The Night"},
+  {src:"https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=600&q=80",label:"Downtown"}
+];
+
+function go(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('p-'+n).classList.add('active');
+  window.scrollTo(0,0);
+  if(n==='list')rg();
+  if(n==='rsvp'){
+    document.getElementById('rf').style.display='block';
+    document.getElementById('rsuc').style.display='none';
+    sel=null;p1=false;
+    document.getElementById('p1c').classList.remove('on');
+    document.getElementById('p1s').style.display='none';
+    document.getElementById('p1n').classList.remove('show');
+    document.querySelectorAll('.ropt').forEach(b=>b.classList.remove('sel'));
+    document.getElementById('rn').value='';
+    document.getElementById('p1i').value='';
+    ub();
+  }
+}
+
+function sp(i){
+  cp=i;
+  document.querySelectorAll('.gi').forEach((e,j)=>{
+    e.classList.toggle('active',j===i);
+    e.querySelector('.gl').style.display=j===i?'block':'none';
+  });
+  document.querySelectorAll('.dot').forEach((e,j)=>e.classList.toggle('active',j===i));
+}
+
+function ig(){
+  const strip=document.getElementById('gstrip');
+  const dotsEl=document.getElementById('gdots');
+  gallery.forEach((g,i)=>{
+    const el=document.createElement('div');
+    el.className='gi'+(i===0?' active':'');
+    el.innerHTML=`<img src="${g.src}" alt="${g.label}" loading="lazy"><div class="gl dm" style="display:${i===0?'block':'none'}">${g.label}</div>`;
+    el.onclick=()=>sp(i);
+    strip.appendChild(el);
+    const d=document.createElement('div');
+    d.className='dot'+(i===0?' active':'');
+    d.onclick=()=>sp(i);
+    dotsEl.appendChild(d);
+  });
+  setInterval(()=>sp((cp+1)%gallery.length),4000);
+}
+
+function rr(){
+  const b=document.getElementById('rbar');
+  b.innerHTML='';
+  ["🔥","🗽","✈️","🥂","❤️","🙌"].forEach(e=>{
+    const btn=document.createElement('button');
+    btn.className='rbtn';
+    btn.innerHTML=e+(R[e]?'<span class="rcount dm">'+R[e]+'</span>':'');
+    btn.onclick=()=>{R[e]=(R[e]||0)+1;db&&db.collection('data').doc('reactions').set(R);rr()};
+    b.appendChild(btn);
+  });
+}
+
+function rc(){
+  const l=document.getElementById('clist');
+  l.innerHTML='';
+  C.forEach(c=>{
+    const d=document.createElement('div');
+    d.className='cbox';
+    d.textContent=c.text;
+    l.appendChild(d);
+  });
+}
+
+function pc(){
+  const i=document.getElementById('cinp');
+  if(!i.value.trim())return;
+  C.push({text:i.value.trim(),ts:Date.now()});
+  i.value='';
+  db&&db.collection('data').doc('comments').set({list:C});
+  rc();
+}
+
+function ss(b){
+  sel=b.dataset.s;
+  document.querySelectorAll('.ropt').forEach(x=>x.classList.remove('sel'));
+  b.classList.add('sel');
+  ub();
+}
+
+function tp1(){
+  p1=!p1;
+  document.getElementById('p1c').classList.toggle('on',p1);
+  document.getElementById('p1s').style.display=p1?'block':'none';
+  document.getElementById('p1n').classList.toggle('show',p1);
+  if(p1)document.getElementById('p1i').focus();
+}
+
+function ub(){
+  const n=document.getElementById('rn').value.trim();
+  const b=document.getElementById('rsub');
+  if(n&&sel){b.classList.add('rdy');b.disabled=false}
+  else{b.classList.remove('rdy');b.disabled=true}
+}
+
+function sr(){
+  const n=document.getElementById('rn').value.trim();
+  if(!n||!sel)return;
+  G=G.filter(g=>g.name.toLowerCase()!==n.toLowerCase());
+  const entry={name:n,status:sel,ts:Date.now()};
+  if(p1){const pn=document.getElementById('p1i').value.trim();if(pn)entry.plus1=pn}
+  G.push(entry);
+  db&&db.collection('data').doc('guests').set({list:G});
+  document.getElementById('rf').style.display='none';
+  document.getElementById('rsuc').style.display='block';
+  const t={coming:"SEE YOU THERE",maybe:"NOTED","not coming":"MISSED"};
+  const m={coming:"November is going to be legendary.",maybe:"Keep me posted. Saving your spot.","not coming":"You'll be missed. Seriously."};
+  const em={coming:"🎉🗽✈️",maybe:"🤞",  "not coming":"😢"};
+  document.getElementById('st').textContent=t[sel];
+  document.getElementById('sm').textContent=m[sel];
+  document.getElementById('suc-emoji').textContent=em[sel];
+  uc();
+}
+
+function grEmoji(guestName,emoji){
+  const key=guestName.toLowerCase();
+  if(!GR[key])GR[key]={};
+  GR[key][emoji]=(GR[key][emoji]||0)+1;
+  db&&db.collection('data').doc('guest_reactions').set(GR);
+  rg();
+}
+
+function gcPost(guestName){
+  const inp=document.getElementById('gc-'+guestName.toLowerCase().replace(/[^a-z0-9]/g,''));
+  if(!inp||!inp.value.trim())return;
+  const key=guestName.toLowerCase();
+  if(!GC_data[key])GC_data[key]=[];
+  GC_data[key].push({text:inp.value.trim(),ts:Date.now()});
+  inp.value='';
+  db&&db.collection('data').doc('guest_comments').set(GC_data);
+  rg();
+}
+
+function toggleGC(el){
+  const wrap=el.closest('.gr-wrap').querySelector('.gr-comments');
+  wrap.classList.toggle('open');
+}
+
+function rg(){
+  const c=document.getElementById('gsec');
+  c.innerHTML='';
+  const gs=[
+    {t:"Confirmed 🎉",f:"coming",co:"#c9a96e",b:"gold"},
+    {t:"Maybe 🤞",f:"maybe",co:"#888",b:"gray"},
+    {t:"Can't make it 😢",f:"not coming",co:"#444",b:"dark"}
+  ];
+  let any=false;
+  gs.forEach(g=>{
+    const items=G.filter(x=>x.status===g.f);
+    if(!items.length)return;
+    any=true;
+    let h=`<div style="margin-bottom:52px"><div class="dm" style="font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:${g.co};margin-bottom:22px;display:flex;align-items:center;gap:12px"><span style="display:inline-block;width:28px;height:1px;background:${g.co}"></span>${g.t} · ${items.length}</div>`;
+    items.forEach(x=>{
+      const bg=g.b==='gold'?'linear-gradient(135deg,#c9a96e,#8a6d3b)':g.b==='gray'?'#1a1a1a':'#111';
+      const tc=g.b==='gold'?'#080808':'#555';
+      const nc=g.b==='gold'?'#f5f0eb':g.b==='gray'?'#999':'#555';
+      const gk=x.name.toLowerCase();
+      const gid=gk.replace(/[^a-z0-9]/g,'');
+      const gReact=GR[gk]||{};
+      const gComments=GC_data[gk]||[];
+      h+=`<div class="gr-wrap"><div class="gr"><div class="ga bask" style="background:${bg};color:${tc}">${x.name.charAt(0).toUpperCase()}</div><div style="flex:1"><div style="font-size:20px;color:${nc}">${x.name}</div>`;
+      if(x.plus1)h+=`<div class="dm" style="font-size:11px;color:#666;margin-top:2px">+ ${x.plus1}</div>`;
+      h+=`</div><div class="gr-react">`;
+      ["🔥","❤️","🙌","😍"].forEach(em=>{
+        const cnt=gReact[em]||0;
+        h+=`<button class="gr-emoji" onclick="grEmoji('${x.name.replace(/'/g,"\\'")}','${em}')">${em}${cnt?`<span class="gr-ec dm" style="display:block">${cnt}</span>`:''}</button>`;
+      });
+      h+=`<button class="gr-toggle-comments dm" onclick="toggleGC(this)">💬${gComments.length?`<span style="font-size:9px;color:var(--gold);margin-left:2px">${gComments.length}</span>`:''}</button>`;
+      h+=`</div></div>`;
+      h+=`<div class="gr-comments">`;
+      gComments.forEach(gc=>{h+=`<div class="gr-comment-item">${gc.text}</div>`});
+      h+=`<div class="gr-comment-add"><input id="gc-${gid}" placeholder="Say something about ${x.name.split(' ')[0]}..." onfocus="this.style.borderColor='#c9a96e'" onblur="this.style.borderColor='#1a1a1a'"><button class="dm" onclick="gcPost('${x.name.replace(/'/g,"\\'")}')">Post</button></div>`;
+      h+=`</div></div>`;
+    });
+    h+=`</div>`;
+    c.innerHTML+=h;
+  });
+  if(!any)c.innerHTML='<div class="dm" style="font-size:14px;color:#444;letter-spacing:.08em;padding:48px 0;text-align:center">No RSVPs yet. Be the first. 👀</div>';
+}
+
+function uc(){
+  const c=G.filter(g=>g.status==='coming').length;
+  const e=document.getElementById('ccount');
+  if(c>0){
+    e.style.display='block';
+    document.getElementById('cnum').textContent=c;
+    document.getElementById('clbl').textContent=c===1?'person confirmed':'people confirmed';
+  }else e.style.display='none';
+}
+
+document.getElementById('rn').addEventListener('input',ub);
+db&&db.collection('data').doc('guests').onSnapshot(d=>{if(d.exists)G=d.data().list||[];uc()});
+db&&db.collection('data').doc('reactions').onSnapshot(d=>{if(d.exists)R=d.data();rr()});
+db&&db.collection('data').doc('comments').onSnapshot(d=>{if(d.exists)C=d.data().list||[];rc()});
+db&&db.collection('data').doc('guest_reactions').onSnapshot(d=>{if(d.exists)GR=d.data();});
+db&&db.collection('data').doc('guest_comments').onSnapshot(d=>{if(d.exists)GC_data=d.data();});
+
+ig();rr();
+</script>
+</body>
+</html>
