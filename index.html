@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>THE BIG 4-0 · New York City</title>
-<meta name="description" content="You're invited. November 21-23, 2026. New York City.">
+<meta name="description" content="You're invited. November 20-23, 2026. New York City.">
 <meta property="og:title" content="THE BIG 4-0 · You're Invited">
 <meta property="og:description" content="A weekend in NYC you won't forget. November 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -162,7 +162,7 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
       <div style="text-align:center;padding:10px 0;border-right:1px solid rgba(201,169,110,.1)">
         <div class="dm" style="font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);opacity:.7;margin-bottom:10px">When</div>
         <div class="bask" style="font-weight:700;font-size:clamp(32px,7vw,46px);color:var(--cream);line-height:1;letter-spacing:.02em">NOV</div>
-        <div class="bask" style="font-weight:700;font-size:clamp(44px,10vw,64px);color:var(--gold);line-height:.9;letter-spacing:.01em">21–23</div>
+        <div class="bask" style="font-weight:700;font-size:clamp(44px,10vw,64px);color:var(--gold);line-height:.9;letter-spacing:.01em">20–23</div>
         <div class="dm" style="font-size:10px;color:#555;margin-top:8px;letter-spacing:.15em">2026 · WEEKEND</div>
       </div>
       <div style="text-align:center;padding:10px 0">
@@ -186,12 +186,12 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
   <div class="marquee-wrap fu">
     <div class="marquee-inner">
       <span class="marquee-item">New York City<span class="marquee-dot">✦</span></span>
-      <span class="marquee-item">November 21–23<span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">November 20–23<span class="marquee-dot">✦</span></span>
       <span class="marquee-item">The Big 4-0<span class="marquee-dot">✦</span></span>
       <span class="marquee-item">You're Invited<span class="marquee-dot">✦</span></span>
       <span class="marquee-item">Book the Flight<span class="marquee-dot">✦</span></span>
       <span class="marquee-item">New York City<span class="marquee-dot">✦</span></span>
-      <span class="marquee-item">November 21–23<span class="marquee-dot">✦</span></span>
+      <span class="marquee-item">November 20–23<span class="marquee-dot">✦</span></span>
       <span class="marquee-item">The Big 4-0<span class="marquee-dot">✦</span></span>
       <span class="marquee-item">You're Invited<span class="marquee-dot">✦</span></span>
       <span class="marquee-item">Book the Flight<span class="marquee-dot">✦</span></span>
@@ -306,13 +306,13 @@ function go(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove(
 function sp(i){cp=i;document.querySelectorAll('.gi').forEach((e,j)=>{e.classList.toggle('active',j===i);e.querySelector('.gl').style.display=j===i?'block':'none'});document.querySelectorAll('.dot').forEach((e,j)=>e.classList.toggle('active',j===i))}
 function ig(){const d=document.getElementById('gdots');for(let i=0;i<GC;i++){const e=document.createElement('div');e.className='dot'+(i===0?' active':'');e.onclick=()=>sp(i);d.appendChild(e)};setInterval(()=>sp((cp+1)%GC),4000)}
 function rr(){const b=document.getElementById('rbar');b.innerHTML='';["🔥","🗽","✈️","🥂","❤️","🙌","🌆","🎭","🍕","🌉","🎉"].forEach(e=>{const btn=document.createElement('button');btn.className='rbtn';btn.innerHTML=e+(R[e]?'<span class="rcount dm">'+R[e]+'</span>':'');btn.onclick=()=>{R[e]=(R[e]||0)+1;db&&db.collection('data').doc('reactions').set(R);rr()};b.appendChild(btn)})}
-function rc(){const l=document.getElementById('clist');l.innerHTML='';C.forEach(c=>{const d=document.createElement('div');d.className='cbox';d.innerHTML=(c.name?'<span style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#c9a96e;display:block;margin-bottom:4px">'+c.name+'</span>':'')+('<span>'+c.text+'</span>');l.appendChild(d)})}
+function rc(){const l=document.getElementById('clist');l.innerHTML='';C.forEach(c=>{if(!c||!c.text||c.text==='undefined')return;const d=document.createElement('div');d.className='cbox';const nm=c.name&&c.name!=='undefined'?c.name:'';d.innerHTML=(nm?'<span style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#c9a96e;display:block;margin-bottom:4px">'+nm+'</span>':'')+('<span>'+c.text+'</span>');l.appendChild(d)})}
 function pc(){const i=document.getElementById('cinp');const n=document.getElementById('cname');if(!i.value.trim())return;C.push({text:i.value.trim(),name:n.value.trim()||'Anonymous',ts:Date.now()});i.value='';db&&db.collection('data').doc('comments').set({list:C});rc()}
 function ss(b){sel=b.dataset.s;document.querySelectorAll('.ropt').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');ub()}
 function tp1(){p1=!p1;document.getElementById('p1c').classList.toggle('on',p1);document.getElementById('p1s').style.display=p1?'block':'none';document.getElementById('p1n').classList.toggle('show',p1);if(p1)document.getElementById('p1i').focus()}
 function ub(){const n=document.getElementById('rn').value.trim();const b=document.getElementById('rsub');if(n&&sel){b.classList.add('rdy');b.disabled=false}else{b.classList.remove('rdy');b.disabled=true}}
 function editRsvp(){const e=window._lastEntry||{};document.getElementById('rf').style.display='block';document.getElementById('rsuc').style.display='none';if(e.name){document.getElementById('rn').value=e.name}if(e.status){sel=e.status;document.querySelectorAll('.ropt').forEach(b=>{b.classList.toggle('sel',b.dataset.s===e.status)});}if(e.plus1){document.getElementById('p1i').value=e.plus1;document.getElementById('p1c').classList.add('on');document.getElementById('p1s').style.display='block';document.getElementById('p1n').classList.add('show');p1=true;}uc();}
-function sr(){const n=document.getElementById('rn').value.trim();if(!n||!sel)return;G=G.filter(g=>g.name.toLowerCase()!==n.toLowerCase());const entry={name:n,status:sel,ts:Date.now()};if(p1){const pn=document.getElementById('p1i').value.trim();if(pn)entry.plus1=pn}G.push(entry);db&&db.collection('data').doc('guests').set({list:G});window._lastEntry={name:n,status:sel,plus1:entry.plus1||''};document.getElementById('rf').style.display='none';document.getElementById('rsuc').style.display='block';const t={coming:"I'M SO EXCITED TO SEE YOU!",maybe:"MAYBE..."};t["not coming"]="I'LL MISS YOU";const m={coming:"THANK YOU ✨",maybe:"I can't wait until this maybe turns into a yes."};m["not coming"]="I will miss you, but I'll see you soon anyway. If you change your mind... NYC will always be here.";document.getElementById('st').textContent=t[sel];document.getElementById('sm').textContent=m[sel];uc()}
+function sr(){const n=document.getElementById('rn').value.trim();if(!n||!sel)return;G=G.filter(g=>g&&g.name&&g.name!=='undefined'&&g.name.toLowerCase()!==n.toLowerCase());const entry={name:n,status:sel,ts:Date.now()};if(p1){const pn=document.getElementById('p1i').value.trim();if(pn)entry.plus1=pn}G.push(entry);db&&db.collection('data').doc('guests').set({list:G});window._lastEntry={name:n,status:sel,plus1:entry.plus1||''};document.getElementById('rf').style.display='none';document.getElementById('rsuc').style.display='block';const t={coming:"I'M SO EXCITED TO SEE YOU!",maybe:"MAYBE..."};t["not coming"]="I'LL MISS YOU";const m={coming:"THANK YOU ✨",maybe:"I can't wait until this maybe turns into a yes."};m["not coming"]="I will miss you, but I'll see you soon anyway. If you change your mind... NYC will always be here.";document.getElementById('st').textContent=t[sel];document.getElementById('sm').textContent=m[sel];uc()}
 
 // Guest-level reactions
 function grEmoji(guestName,emoji){const key=guestName.toLowerCase();if(!GR[key])GR[key]={};GR[key][emoji]=(GR[key][emoji]||0)+1;db&&db.collection('data').doc('guest_reactions').set(GR);rg()}
@@ -324,7 +324,7 @@ function rg(){const c=document.getElementById('gsec');c.innerHTML='';
 const gs=[{t:"Confirmed",f:"coming",co:"#c9a96e",b:"gold"},{t:"Maybe",f:"maybe",co:"#888",b:"gray"},{t:"Can't make it",f:"not coming",co:"#444",b:"dark"}];
 let any=false;gs.forEach(g=>{const items=G.filter(x=>x.status===g.f);if(!items.length)return;any=true;
 let h='<div style="margin-bottom:52px"><div class="dm" style="font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:'+g.co+';margin-bottom:22px;display:flex;align-items:center;gap:12px"><span style="display:inline-block;width:28px;height:1px;background:'+g.co+'"></span>'+g.t+' · '+(g.f==='coming'?items.reduce((s,x)=>s+1+(x.plus1?1:0),0):items.length)+'</div>';
-items.forEach(x=>{const bg=g.b==='gold'?'linear-gradient(135deg,#c9a96e,#8a6d3b)':g.b==='gray'?'#1a1a1a':'#111';const tc=g.b==='gold'?'#080808':'#555';const nc=g.b==='gold'?'#f5f0eb':g.b==='gray'?'#999':'#555';
+items.forEach(x=>{if(!x||!x.name||x.name==='undefined')return;const bg=g.b==='gold'?'linear-gradient(135deg,#c9a96e,#8a6d3b)':g.b==='gray'?'#1a1a1a':'#111';const tc=g.b==='gold'?'#080808':'#555';const nc=g.b==='gold'?'#f5f0eb':g.b==='gray'?'#999':'#555';
 const gk=x.name.toLowerCase();const gid=gk.replace(/[^a-z0-9]/g,'');
 const gReact=GR[gk]||{};const gComments=GC_data[gk]||[];
 // Guest row with reactions
@@ -347,7 +347,7 @@ h+='</div></div>';
 });h+='</div>';c.innerHTML+=h});
 if(!any)c.innerHTML='<div class="dm" style="font-size:14px;color:#555;letter-spacing:.08em;padding:48px 0;text-align:center">No RSVPs yet. Be the first.</div>'}
 
-function uc(){const confirmed=G.filter(g=>g.status==='coming');const c=confirmed.reduce((s,g)=>s+1+(g.plus1?1:0),0);const maybes=G.filter(g=>g.status==='maybe').length;const e=document.getElementById('ccount');if(c>0||maybes>0){e.style.display='block';document.getElementById('cnum').textContent=c;document.getElementById('clbl').textContent=c===1?'person confirmed':'people confirmed';const mel=document.getElementById('mnum');if(mel){mel.parentElement.style.display=maybes>0?'inline-block':'none';mel.textContent=maybes;document.getElementById('mlbl').textContent=maybes===1?'maybe':'maybes';}}else e.style.display='none'}
+function uc(){const confirmed=G.filter(g=>g&&g.name&&g.name!=='undefined'&&g.status==='coming');const c=confirmed.reduce((s,g)=>s+1+(g.plus1?1:0),0);const maybes=G.filter(g=>g&&g.name&&g.name!=='undefined'&&g.status==='maybe').length;const e=document.getElementById('ccount');if(c>0||maybes>0){e.style.display='block';document.getElementById('cnum').textContent=c;document.getElementById('clbl').textContent=c===1?'person confirmed':'people confirmed';const mel=document.getElementById('mnum');if(mel){mel.parentElement.style.display=maybes>0?'inline-block':'none';mel.textContent=maybes;document.getElementById('mlbl').textContent=maybes===1?'maybe':'maybes';}}else e.style.display='none'}
 
 document.getElementById('rn').addEventListener('input',ub);
 db&&db.collection('data').doc('guests').onSnapshot(d=>{if(d.exists)G=d.data().list||[];uc()});
