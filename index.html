@@ -118,7 +118,10 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
 .tcancel{display:block;margin:12px auto 0;font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:10px 22px;cursor:pointer;transition:color .3s}
 .tcancel:hover{color:var(--gold)}
 .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--faint);border-radius:10px}
-.ttable{width:100%;border-collapse:collapse;font-family:'DM Sans',sans-serif;min-width:1090px}
+.ttable{width:100%;border-collapse:collapse;font-family:'DM Sans',sans-serif;min-width:1240px}
+.ttable td.temail{white-space:nowrap}
+.ttable td.temail a{color:#8d8477;text-decoration:none;border-bottom:1px solid #2b2b2b;transition:color .3s,border-color .3s}
+.ttable td.temail a:hover{color:var(--gold);border-bottom-color:rgba(201,169,110,.5)}
 .ttable th{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:500;text-align:left;padding:15px 14px;border-bottom:1px solid rgba(201,169,110,.22);background:rgba(201,169,110,.05);white-space:nowrap}
 .ttable td{font-size:13px;color:#b0a89d;padding:15px 14px;border-bottom:1px solid #141414;vertical-align:top}
 .ttable tr:last-child td{border-bottom:none}
@@ -325,11 +328,11 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
     <div class="bask" style="font-weight:700;text-transform:uppercase;letter-spacing:.03em;font-size:clamp(34px,8.5vw,62px);line-height:.9;margin-bottom:30px">Flights &amp; Accommodations</div>
   </div>
 
-  <button id="tadd" class="tadd dm" onclick="st_form()">+ &nbsp;Add my row</button>
+  <button id="tadd" class="tadd dm" onclick="st_form()">+ &nbsp;Add my info</button>
 
   <div id="tf" style="display:none">
-    <div class="tleg" style="margin-top:34px">Your row<span class="rule"></span></div>
-    <div style="margin-bottom:26px"><label class="tlab">Name</label><input id="tn" class="tin" type="text" placeholder="First &amp; last name" style="font-size:23px"></div>
+    <div class="tleg" style="margin-top:34px">Your info<span class="rule"></span></div>
+    <div class="tgrid" style="margin-bottom:26px"><div><label class="tlab">Name</label><input id="tn" class="tin" type="text" placeholder="First &amp; last name" style="font-size:22px"></div><div><label class="tlab">Email</label><input id="tem" class="tin" type="email" placeholder="you@email.com" style="font-size:22px"></div></div>
     <div class="tgrid">
       <div><label class="tlab">Date of arrival</label><input id="tad" class="tin" type="date"></div>
       <div><label class="tlab">Time of arrival</label><input id="tat" class="tin" type="time"></div>
@@ -342,15 +345,15 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
     <div style="margin-bottom:26px"><label class="tlab">Do I need help finding a place?</label>
       <div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" class="ropt dm thelp" data-h="Yes" onclick="st_help(this)" style="padding:13px 26px;font-size:12px">Yes please</button><button type="button" class="ropt dm thelp" data-h="No" onclick="st_help(this)" style="padding:13px 26px;font-size:12px">No, I'm sorted</button></div></div>
     <div style="margin-bottom:28px"><label class="tlab">Dietary restrictions</label><input id="tdiet" class="tin" type="text" placeholder="Vegetarian, no nuts, nothing at all…"></div>
-    <button id="tsub" class="sbtn dm" onclick="st_save()" disabled>Save my row</button>
+    <button id="tsub" class="sbtn dm" onclick="st_save()" disabled>Save my info</button>
     <button class="dm tcancel" onclick="st_close()">Cancel</button>
-    <div class="dm" style="font-size:10px;color:#444;text-align:center;margin-top:12px;letter-spacing:.1em">Same name = updates your row.</div>
+    <div class="dm" style="font-size:10px;color:#444;text-align:center;margin-top:12px;letter-spacing:.1em">Same name = updates your info.</div>
   </div>
 
   <div id="tsuc" style="display:none;text-align:center;padding:30px 0 10px">
     <div class="bask" style="font-weight:700;font-size:clamp(34px,8vw,52px);line-height:.9;margin-bottom:10px">SEE YOU THERE</div>
     <p class="bask" style="font-style:italic;font-size:19px;color:var(--gold);margin-bottom:22px" id="tsucm"></p>
-    <button onclick="st_edit()" class="dm" style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:10px 22px;cursor:pointer;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">✎ Edit my row</button>
+    <button onclick="st_edit()" class="dm" style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:10px 22px;cursor:pointer;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">✎ Edit my info</button>
   </div>
 
   <div id="tsec" style="margin-top:38px"></div>
@@ -424,8 +427,8 @@ if(!any)c.innerHTML='<div class="dm" style="font-size:14px;color:#555;letter-spa
 function uc(){const confirmed=G.filter(g=>g&&g.name&&g.name!=='undefined'&&g.status==='coming');const c=confirmed.reduce((s,g)=>s+1+(g.plus1?1:0),0);const maybes=G.filter(g=>g&&g.name&&g.name!=='undefined'&&g.status==='maybe').length;const e=document.getElementById('ccount');if(c>0||maybes>0){e.style.display='block';document.getElementById('cnum').textContent=c;document.getElementById('clbl').textContent=c===1?'person confirmed':'people confirmed';const mel=document.getElementById('mnum');if(mel){mel.parentElement.style.display=maybes>0?'inline-block':'none';mel.textContent=maybes;document.getElementById('mlbl').textContent=maybes===1?'maybe':'maybes';}}else e.style.display='none'}
 
 // ═══ TRAVEL ═══
-const TF=['tn','tad','tat','tap','ts','tdd','tdt','tdp','tdiet'];
-const TCOLS=[['NAME','name'],['DATE OF ARRIVAL','arrDate'],['TIME OF ARRIVAL','arrTime'],['AIRPORT OF ARRIVAL','airport'],
+const TF=['tn','tem','tad','tat','tap','ts','tdd','tdt','tdp','tdiet'];
+const TCOLS=[['NAME','name'],['EMAIL','email'],['DATE OF ARRIVAL','arrDate'],['TIME OF ARRIVAL','arrTime'],['AIRPORT OF ARRIVAL','airport'],
 ['ADDRESS OF STAY','stay'],['NEEDS HELP FINDING A PLACE?','help'],['DATE OF DEPARTURE','depDate'],
 ['TIME OF DEPARTURE','depTime'],['AIRPORT OF DEPARTURE','depAirport'],['DIETARY RESTRICTIONS','diet']];
 let thelp='';
@@ -449,12 +452,12 @@ try{f.scrollIntoView({behavior:'smooth',block:'start'})}catch(e){}
 setTimeout(()=>{try{document.getElementById('tn').focus()}catch(e){}},320)}
 function st_close(){st_show(0,0,1)}
 function st_edit(){const e=window._lastTravel||{};st_show(1,0,0);
-const map={tn:'name',tad:'arrDate',tat:'arrTime',tap:'airport',ts:'stay',tdd:'depDate',tdt:'depTime',tdp:'depAirport',tdiet:'diet'};
+const map={tn:'name',tem:'email',tad:'arrDate',tat:'arrTime',tap:'airport',ts:'stay',tdd:'depDate',tdt:'depTime',tdp:'depAirport',tdiet:'diet'};
 Object.keys(map).forEach(id=>{const el=document.getElementById(id);if(el)el.value=e[map[id]]||''});
 thelp=e.help||'';document.querySelectorAll('.thelp').forEach(x=>x.classList.toggle('sel',x.dataset.h===thelp));
 st_ub();try{document.getElementById('tf').scrollIntoView({behavior:'smooth',block:'start'})}catch(err){}}
 function st_save(){const n=tv('tn');if(!n)return;
-const entry={name:n,arrDate:tv('tad'),arrTime:tv('tat'),airport:tv('tap').toUpperCase(),stay:tv('ts'),
+const entry={name:n,email:tv('tem').toLowerCase(),arrDate:tv('tad'),arrTime:tv('tat'),airport:tv('tap').toUpperCase(),stay:tv('ts'),
 help:thelp,depDate:tv('tdd'),depTime:tv('tdt'),depAirport:tv('tdp').toUpperCase(),diet:tv('tdiet'),ts:Date.now()};
 T=T.filter(t=>t&&t.name&&t.name.toLowerCase()!==n.toLowerCase());T.push(entry);window._lastTravel=entry;
 db&&db.collection('data').doc('travel').set({list:T});
@@ -473,6 +476,7 @@ list.forEach(t=>{
  const cell=(v,cls)=>v?'<td class="'+cls+'">'+esc(v)+'</td>':'<td class="tmuted">—</td>';
  h+='<tr>';
  h+='<td class="tname">'+esc(t.name)+'</td>';
+ h+=t.email?'<td class="temail"><a href="mailto:'+esc(t.email)+'">'+esc(t.email)+'</a></td>':'<td class="tmuted">—</td>';
  h+=cell(tDate(t.arrDate),'tnum');
  h+=cell(tTime(t.arrTime),'tnum');
  h+=cell(t.airport,'tnum');
