@@ -119,9 +119,9 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
 .tcancel:hover{color:var(--gold)}
 .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--faint);border-radius:10px}
 .ttable{width:100%;border-collapse:collapse;font-family:'DM Sans',sans-serif;min-width:1240px}
-.tedit{background:transparent;border:none;color:#3d3d3d;cursor:pointer;font-size:12px;padding:2px 6px;margin-left:7px;border-radius:4px;transition:all .25s;vertical-align:middle}
-.tedit:hover{color:var(--gold);background:rgba(201,169,110,.1)}
-.ttable tbody tr:hover .tedit{color:#6b6b6b}
+.tedit{display:inline-flex;align-items:center;gap:4px;background:transparent;border:none;color:rgba(201,169,110,.45);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.14em;text-transform:uppercase;padding:3px 1px;margin-left:11px;transition:color .25s;vertical-align:middle;line-height:1}
+.tedit:hover{color:var(--gold)}
+.ttable tbody tr:hover .tedit{color:rgba(201,169,110,.7)}
 .ttable tbody tr:hover .tedit:hover{color:var(--gold)}
 .ttable td.temail{white-space:nowrap}
 .ttable td.temail a{color:#8d8477;text-decoration:none;border-bottom:1px solid #2b2b2b;transition:color .3s,border-color .3s}
@@ -361,7 +361,7 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
   </div>
 
   <div id="tsec" style="margin-top:38px"></div>
-  <div id="thint" class="dm" style="display:none;font-size:10px;color:#3f3f3f;letter-spacing:.12em;text-align:center;margin-top:14px;line-height:1.9">Tap the ✎ next to your name to change anything<br>← swipe the table sideways to see every column →</div>
+  <div id="thint" class="dm" style="display:none;font-size:10px;color:#3f3f3f;letter-spacing:.12em;text-align:center;margin-top:14px;line-height:1.9">Changed your plans? Hit Edit next to your name<br>← swipe the table sideways to see every column →</div>
 
   <div style="margin-top:36px;padding-top:32px;border-top:1px solid var(--faint)"><button class="cta dm" style="max-width:100%" onclick="go('list')">See who's coming →</button></div>
 </div></div>
@@ -481,7 +481,7 @@ h+='</tr></thead><tbody>';
 list.forEach(t=>{
  const cell=(v,cls)=>v?'<td class="'+cls+'">'+esc(v)+'</td>':'<td class="tmuted">—</td>';
  h+='<tr>';
- h+='<td class="tname">'+esc(t.name)+'<button class="tedit" title="Edit '+esc(t.name)+'" onclick="st_editRow('+list.indexOf(t)+')">✎</button></td>';
+ h+='<td class="tname">'+esc(t.name)+'<button class="tedit" title="Edit '+esc(t.name)+'" onclick="st_editRow('+list.indexOf(t)+')">✎ Edit</button></td>';
  h+=t.email?'<td class="temail"><a href="mailto:'+esc(t.email)+'">'+esc(t.email)+'</a></td>':'<td class="tmuted">—</td>';
  h+=cell(tDate(t.arrDate),'tnum');
  h+=cell(tTime(t.arrTime),'tnum');
