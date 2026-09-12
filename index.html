@@ -119,6 +119,10 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
 .tcancel:hover{color:var(--gold)}
 .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--faint);border-radius:10px}
 .ttable{width:100%;border-collapse:collapse;font-family:'DM Sans',sans-serif;min-width:1240px}
+.tedit{background:transparent;border:none;color:#3d3d3d;cursor:pointer;font-size:12px;padding:2px 6px;margin-left:7px;border-radius:4px;transition:all .25s;vertical-align:middle}
+.tedit:hover{color:var(--gold);background:rgba(201,169,110,.1)}
+.ttable tbody tr:hover .tedit{color:#6b6b6b}
+.ttable tbody tr:hover .tedit:hover{color:var(--gold)}
 .ttable td.temail{white-space:nowrap}
 .ttable td.temail a{color:#8d8477;text-decoration:none;border-bottom:1px solid #2b2b2b;transition:color .3s,border-color .3s}
 .ttable td.temail a:hover{color:var(--gold);border-bottom-color:rgba(201,169,110,.5)}
@@ -357,7 +361,7 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
   </div>
 
   <div id="tsec" style="margin-top:38px"></div>
-  <div id="thint" class="dm" style="display:none;font-size:10px;color:#3f3f3f;letter-spacing:.12em;text-align:center;margin-top:12px">← swipe the table sideways to see every column →</div>
+  <div id="thint" class="dm" style="display:none;font-size:10px;color:#3f3f3f;letter-spacing:.12em;text-align:center;margin-top:14px;line-height:1.9">Tap the ✎ next to your name to change anything<br>← swipe the table sideways to see every column →</div>
 
   <div style="margin-top:36px;padding-top:32px;border-top:1px solid var(--faint)"><button class="cta dm" style="max-width:100%" onclick="go('list')">See who's coming →</button></div>
 </div></div>
@@ -451,6 +455,7 @@ function st_form(){st_show(1,0,0);st_reset();const f=document.getElementById('tf
 try{f.scrollIntoView({behavior:'smooth',block:'start'})}catch(e){}
 setTimeout(()=>{try{document.getElementById('tn').focus()}catch(e){}},320)}
 function st_close(){st_show(0,0,1)}
+function st_editRow(i){const e=(window._tSorted||[])[i];if(!e)return;window._lastTravel=e;st_edit()}
 function st_edit(){const e=window._lastTravel||{};st_show(1,0,0);
 const map={tn:'name',tem:'email',tad:'arrDate',tat:'arrTime',tap:'airport',ts:'stay',tdd:'depDate',tdt:'depTime',tdp:'depAirport',tdiet:'diet'};
 Object.keys(map).forEach(id=>{const el=document.getElementById(id);if(el)el.value=e[map[id]]||''});
@@ -468,6 +473,7 @@ function rt(){const c=document.getElementById('tsec');if(!c)return;
 const hint=document.getElementById('thint');
 const list=(T||[]).filter(t=>t&&t.name&&t.name!=='undefined')
  .sort((a,b)=>(a.arrDate||'9999').localeCompare(b.arrDate||'9999')||(a.arrTime||'').localeCompare(b.arrTime||''));
+window._tSorted=list;
 if(!list.length){c.innerHTML='<div class="tempty">Nobody on the table yet. Go first.</div>';if(hint)hint.style.display='none';return}
 let h='<div class="tscroll"><table class="ttable"><thead><tr>';
 TCOLS.forEach(col=>{h+='<th>'+col[0]+'</th>'});
@@ -475,7 +481,7 @@ h+='</tr></thead><tbody>';
 list.forEach(t=>{
  const cell=(v,cls)=>v?'<td class="'+cls+'">'+esc(v)+'</td>':'<td class="tmuted">—</td>';
  h+='<tr>';
- h+='<td class="tname">'+esc(t.name)+'</td>';
+ h+='<td class="tname">'+esc(t.name)+'<button class="tedit" title="Edit '+esc(t.name)+'" onclick="st_editRow('+list.indexOf(t)+')">✎</button></td>';
  h+=t.email?'<td class="temail"><a href="mailto:'+esc(t.email)+'">'+esc(t.email)+'</a></td>':'<td class="tmuted">—</td>';
  h+=cell(tDate(t.arrDate),'tnum');
  h+=cell(tTime(t.arrTime),'tnum');
