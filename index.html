@@ -103,6 +103,19 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
 .marquee-inner{display:flex;white-space:nowrap;animation:marquee 18s linear infinite;width:max-content}
 .marquee-item{font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#555;padding:0 28px}
 .marquee-dot{color:var(--gold);margin:0 4px}
+/* ═══ TRAVEL ═══ */
+.tlab{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#555;display:block;margin-bottom:10px}
+.tin{width:100%;background:transparent;border:none;border-bottom:1px solid #2a2a2a;color:var(--cream);font-family:'Cormorant Garamond',serif;font-size:20px;padding:11px 0;outline:none;transition:border-color .3s;color-scheme:dark}
+.tin::placeholder{color:#3a3a3a}
+.tin:focus{border-bottom-color:var(--gold)}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:30px}
+@media(max-width:520px){.tgrid{grid-template-columns:1fr;gap:18px}}
+.tleg{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.tleg span.rule{display:inline-block;flex:1;height:1px;background:rgba(201,169,110,.18)}
+.tcard{display:flex;align-items:flex-start;gap:16px;padding:18px 0;border-bottom:1px solid var(--faint)}
+.tmeta{font-size:11px;letter-spacing:.06em;color:#6d6d6d;margin-top:4px;line-height:1.7;font-family:'DM Sans',sans-serif}
+.tmeta b{color:#9b9b9b;font-weight:500}
+.tflag{display:inline-block;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(201,169,110,.3);border-radius:4px;padding:2px 7px;margin-right:7px}
 .taste-header{text-align:center;margin-bottom:32px}
 .taste-label{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:rgba(201,169,110,.6);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:12px}
 .taste-label::before,.taste-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(201,169,110,.2));max-width:60px}
@@ -256,7 +269,7 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
     <p class="tagline" style="color:var(--gold);">Book the flight. ✈️</p>
   </div>
   <div class="fu d7" style="margin-bottom:12px"><button class="cta dm" onclick="go('rsvp')">✈️ &nbsp; I'll be there</button></div>
-  <div class="fu d7" style="text-align:center"><button class="dm" onclick="go('list')" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:14px 32px;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">See who's coming →</button></div>
+  <div class="fu d7" style="text-align:center;display:flex;justify-content:center;flex-wrap:wrap;gap:4px"><button class="dm" onclick="go('list')" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:14px 22px;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">See who's coming →</button><span class="dm" style="color:#2a2a2a;align-self:center">·</span><button class="dm" onclick="go('travel')" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:14px 22px;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">My flights ✈️</button></div>
 
   <div id="ccount" class="fu d8" style="margin-top:40px;text-align:center;display:none"><span class="bask" style="font-weight:700;color:var(--gold);font-size:32px" id="cnum"></span><span class="dm" style="margin-left:8px;font-size:11px;letter-spacing:.2em;color:#555;text-transform:uppercase" id="clbl"></span><span style="display:none;margin-left:24px" id="maybe-block"><span class="bask" style="font-weight:700;color:#888;font-size:32px" id="mnum"></span><span class="dm" style="margin-left:8px;font-size:11px;letter-spacing:.2em;color:#555;text-transform:uppercase" id="mlbl"></span></span></div>
 
@@ -281,7 +294,7 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
     <div class="plus1-wrap fu"><div class="plus1-toggle" onclick="tp1()"><div class="plus1-check" id="p1c"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:none" id="p1s"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="dm" style="font-size:13px;color:var(--cream)">Bringing a +1</div><div class="dm" style="font-size:10px;color:#666;margin-top:2px">Partner, spouse, significant other</div></div></div><div class="plus1-name" id="p1n"><input id="p1i" type="text" placeholder="Their name" onfocus="this.style.borderBottomColor='#c9a96e'" onblur="this.style.borderBottomColor='#333'"></div></div>
     <button id="rsub" class="sbtn dm" onclick="sr()" disabled style="margin-top:36px">Lock it in</button>
   </div>
-  <div id="rsuc" style="display:none;text-align:center;padding-top:48px"><div class="bask" style="font-weight:700;" id="st" style="font-size:clamp(52px,12vw,84px);line-height:.88;margin-bottom:18px"></div><p id="sm" class="bask" style="font-style:italic;font-size:22px;color:var(--gold);margin-bottom:52px"></p><button class="cta dm" onclick="go('list')">See who's coming →</button><button onclick="editRsvp()" class="dm" style="display:block;margin:16px auto 0;font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:12px 24px;cursor:pointer;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">✎ Edit my response</button></div>
+  <div id="rsuc" style="display:none;text-align:center;padding-top:48px"><div class="bask" style="font-weight:700;" id="st" style="font-size:clamp(52px,12vw,84px);line-height:.88;margin-bottom:18px"></div><p id="sm" class="bask" style="font-style:italic;font-size:22px;color:var(--gold);margin-bottom:52px"></p><button class="cta dm" onclick="go('travel')">✈️ &nbsp; Add your flight details</button><button class="dm" onclick="go('list')" style="display:block;margin:14px auto 0;font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:12px 24px;cursor:pointer;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">See who's coming →</button><button onclick="editRsvp()" class="dm" style="display:block;margin:16px auto 0;font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:12px 24px;cursor:pointer;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">✎ Edit my response</button></div>
 </div></div>
 
 <!-- ═══ GUEST LIST ═══ -->
@@ -289,7 +302,59 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
   <button class="back dm" onclick="go('land')">← Back</button>
   <div class="fu"><div class="bask" style="font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(52px,12vw,76px);line-height:.88;margin-bottom:10px">THE LIST</div><div class="bask" style="font-style:italic;font-size:22px;color:var(--gold);margin-bottom:52px">If your name's not here yet, fix that.</div></div>
   <div id="gsec"></div>
-  <div style="margin-top:36px;padding-top:36px;border-top:1px solid var(--faint)"><button class="cta dm" style="max-width:100%" onclick="go('rsvp')">I'll be there</button></div>
+  <div style="margin-top:36px;padding-top:36px;border-top:1px solid var(--faint)"><button class="cta dm" style="max-width:100%" onclick="go('rsvp')">I'll be there</button><button class="dm" onclick="go('travel')" style="display:block;margin:14px auto 0;font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:12px 24px;cursor:pointer;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">Who lands when ✈️ →</button></div>
+</div></div>
+
+<!-- ═══ TRAVEL ═══ -->
+<div id="p-travel" class="page"><div class="wrap" style="max-width:620px">
+  <button class="back dm" onclick="go('land')">← Back</button>
+  <div id="tf">
+    <div class="bask fu" style="font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(46px,11vw,76px);line-height:.88;margin-bottom:10px">WHEELS DOWN</div>
+    <div class="fu bask" style="font-style:italic;font-size:22px;color:var(--gold);margin-bottom:12px">When you land, when you leave, where you crash.</div>
+    <div class="fu dm" style="font-size:10px;color:#666;letter-spacing:.12em;margin-bottom:48px">Everyone can see this — so share a cab, share a hotel, share a hangover.</div>
+
+    <div class="fu" style="margin-bottom:34px"><label class="tlab">Your name</label><input id="tn" class="tin" type="text" placeholder="First &amp; last name" style="font-size:26px"></div>
+
+    <div class="fu"><div class="tleg">Arrival<span class="rule"></span></div>
+      <div class="tgrid">
+        <div><label class="tlab">Date you land</label><input id="tad" class="tin" type="date"></div>
+        <div><label class="tlab">Time you land</label><input id="tat" class="tin" type="time"></div>
+        <div><label class="tlab">Flight number</label><input id="taf" class="tin" type="text" placeholder="AF 006"></div>
+        <div><label class="tlab">Airport</label><input id="tap" class="tin" type="text" placeholder="JFK / EWR / LGA"></div>
+      </div>
+    </div>
+
+    <div class="fu"><div class="tleg">Departure<span class="rule"></span></div>
+      <div class="tgrid">
+        <div><label class="tlab">Date you fly out</label><input id="tdd" class="tin" type="date"></div>
+        <div><label class="tlab">Time you fly out</label><input id="tdt" class="tin" type="time"></div>
+        <div><label class="tlab">Flight number</label><input id="tdf" class="tin" type="text" placeholder="AF 007"></div>
+        <div><label class="tlab">Airport</label><input id="tdp" class="tin" type="text" placeholder="JFK / EWR / LGA"></div>
+      </div>
+    </div>
+
+    <div class="fu"><div class="tleg">Where you're staying<span class="rule"></span></div>
+      <div style="margin-bottom:24px"><label class="tlab">Hotel, Airbnb or neighbourhood</label><input id="ts" class="tin" type="text" placeholder="The Standard, East Village"></div>
+      <div style="margin-bottom:30px"><label class="tlab">Anything else <span style="color:#3a3a3a">(optional)</span></label><input id="tnote" class="tin" type="text" placeholder="Still looking for a room to share…"></div>
+    </div>
+
+    <button id="tsub" class="sbtn dm" onclick="st_save()" disabled>Save my travel</button>
+    <div class="dm" style="font-size:10px;color:#444;text-align:center;margin-top:14px;letter-spacing:.1em">Same name = updates your entry. Nothing gets duplicated.</div>
+  </div>
+
+  <div id="tsuc" style="display:none;text-align:center;padding-top:40px;padding-bottom:20px">
+    <div class="bask" style="font-weight:700;font-size:clamp(44px,10vw,72px);line-height:.9;margin-bottom:14px">SEE YOU THERE</div>
+    <p class="bask" style="font-style:italic;font-size:21px;color:var(--gold);margin-bottom:40px" id="tsucm"></p>
+    <button onclick="st_edit()" class="dm" style="font-size:11px;letter-spacing:.15em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:12px 24px;cursor:pointer;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">✎ Edit my travel</button>
+  </div>
+
+  <div style="margin-top:56px;padding-top:44px;border-top:1px solid var(--faint)">
+    <div class="bask" style="font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(34px,8vw,50px);line-height:.9;margin-bottom:8px">WHO LANDS WHEN</div>
+    <div class="bask" style="font-style:italic;font-size:19px;color:var(--gold);margin-bottom:40px">Find your cab buddy.</div>
+    <div id="tsec"></div>
+  </div>
+
+  <div style="margin-top:40px;padding-top:36px;border-top:1px solid var(--faint)"><button class="cta dm" style="max-width:100%" onclick="go('list')">See who's coming →</button></div>
 </div></div>
 
 <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
@@ -300,9 +365,9 @@ try{
 firebase.initializeApp({apiKey:"AIzaSyAUNBnZALzSIo3bjgk6BQTge0HFEP9hRLc",authDomain:"the-big-40.firebaseapp.com",projectId:"the-big-40",storageBucket:"the-big-40.firebasestorage.app",messagingSenderId:"53708654298",appId:"1:53708654298:web:05acfc497314d4482747e3"});
 db=firebase.firestore();
 }catch(e){console.log('Firebase not available, running in offline mode');}
-let G=[],R={},C=[],GR={},GC_data={},sel=null,cp=0,p1=false;const GC=15;
+let G=[],R={},C=[],GR={},GC_data={},T=[],sel=null,cp=0,p1=false;const GC=15;
 
-function go(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('p-'+n).classList.add('active');window.scrollTo(0,0);if(n==='list')rg();if(n==='rsvp'){document.getElementById('rf').style.display='block';document.getElementById('rsuc').style.display='none';sel=null;p1=false;document.getElementById('p1c').classList.remove('on');document.getElementById('p1s').style.display='none';document.getElementById('p1n').classList.remove('show');document.querySelectorAll('.ropt').forEach(b=>b.classList.remove('sel'));document.getElementById('rn').value='';document.getElementById('p1i').value='';ub()}}
+function go(n){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('p-'+n).classList.add('active');window.scrollTo(0,0);if(n==='list')rg();if(n==='travel')st_open();if(n==='rsvp'){document.getElementById('rf').style.display='block';document.getElementById('rsuc').style.display='none';sel=null;p1=false;document.getElementById('p1c').classList.remove('on');document.getElementById('p1s').style.display='none';document.getElementById('p1n').classList.remove('show');document.querySelectorAll('.ropt').forEach(b=>b.classList.remove('sel'));document.getElementById('rn').value='';document.getElementById('p1i').value='';ub()}}
 function sp(i){cp=i;document.querySelectorAll('.gi').forEach((e,j)=>{e.classList.toggle('active',j===i);e.querySelector('.gl').style.display=j===i?'block':'none'});document.querySelectorAll('.dot').forEach((e,j)=>e.classList.toggle('active',j===i))}
 function ig(){const d=document.getElementById('gdots');for(let i=0;i<GC;i++){const e=document.createElement('div');e.className='dot'+(i===0?' active':'');e.onclick=()=>sp(i);d.appendChild(e)};setInterval(()=>sp((cp+1)%GC),4000)}
 function rr(){const b=document.getElementById('rbar');b.innerHTML='';["🔥","🗽","✈️","🥂","❤️","🙌","🌆","🎭","🍕","🌉","🎉"].forEach(e=>{const btn=document.createElement('button');btn.className='rbtn';btn.innerHTML=e+(R[e]?'<span class="rcount dm">'+R[e]+'</span>':'');btn.onclick=()=>{R[e]=(R[e]||0)+1;db&&db.collection('data').doc('reactions').set(R);rr()};b.appendChild(btn)})}
@@ -349,7 +414,49 @@ if(!any)c.innerHTML='<div class="dm" style="font-size:14px;color:#555;letter-spa
 
 function uc(){const confirmed=G.filter(g=>g&&g.name&&g.name!=='undefined'&&g.status==='coming');const c=confirmed.reduce((s,g)=>s+1+(g.plus1?1:0),0);const maybes=G.filter(g=>g&&g.name&&g.name!=='undefined'&&g.status==='maybe').length;const e=document.getElementById('ccount');if(c>0||maybes>0){e.style.display='block';document.getElementById('cnum').textContent=c;document.getElementById('clbl').textContent=c===1?'person confirmed':'people confirmed';const mel=document.getElementById('mnum');if(mel){mel.parentElement.style.display=maybes>0?'inline-block':'none';mel.textContent=maybes;document.getElementById('mlbl').textContent=maybes===1?'maybe':'maybes';}}else e.style.display='none'}
 
+// ═══ TRAVEL ═══
+const TF=['tn','tad','tat','taf','tap','tdd','tdt','tdf','tdp','ts','tnote'];
+function tv(id){const e=document.getElementById(id);return e?e.value.trim():''}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function tDate(s){if(!s)return'';const p=s.split('-');if(p.length!==3)return s;const d=new Date(+p[0],+p[1]-1,+p[2]);if(isNaN(d))return s;
+return d.toLocaleDateString('en-GB',{weekday:'short',day:'numeric',month:'short'})}
+function tTime(s){if(!s)return'';const p=s.split(':');if(p.length<2)return s;let h=+p[0];const m=p[1];const ap=h>=12?'pm':'am';h=h%12||12;return h+':'+m+ap}
+function st_ub(){const b=document.getElementById('tsub');const ok=tv('tn')&&(tv('tad')||tv('tdd')||tv('ts'));
+if(ok){b.classList.add('rdy');b.disabled=false}else{b.classList.remove('rdy');b.disabled=true}}
+function st_open(){document.getElementById('tf').style.display='block';document.getElementById('tsuc').style.display='none';TF.forEach(id=>{const e=document.getElementById(id);if(e)e.value=''});st_ub();rt()}
+function st_edit(){const e=window._lastTravel||{};document.getElementById('tf').style.display='block';document.getElementById('tsuc').style.display='none';
+const map={tn:'name',tad:'arrDate',tat:'arrTime',taf:'arrFlight',tap:'arrPort',tdd:'depDate',tdt:'depTime',tdf:'depFlight',tdp:'depPort',ts:'stay',tnote:'note'};
+Object.keys(map).forEach(id=>{const el=document.getElementById(id);if(el)el.value=e[map[id]]||''});st_ub();window.scrollTo(0,0)}
+function st_save(){const n=tv('tn');if(!n)return;
+const entry={name:n,arrDate:tv('tad'),arrTime:tv('tat'),arrFlight:tv('taf').toUpperCase(),arrPort:tv('tap').toUpperCase(),depDate:tv('tdd'),depTime:tv('tdt'),depFlight:tv('tdf').toUpperCase(),depPort:tv('tdp').toUpperCase(),stay:tv('ts'),note:tv('tnote'),ts:Date.now()};
+T=T.filter(t=>t&&t.name&&t.name.toLowerCase()!==n.toLowerCase());T.push(entry);window._lastTravel=entry;
+db&&db.collection('data').doc('travel').set({list:T});
+document.getElementById('tf').style.display='none';document.getElementById('tsuc').style.display='block';
+document.getElementById('tsucm').textContent=entry.arrDate?('Landing '+tDate(entry.arrDate)+(entry.arrTime?' at '+tTime(entry.arrTime):'')+'.'):'Your details are on the board.';
+window.scrollTo(0,0);rt()}
+function rt(){const c=document.getElementById('tsec');if(!c)return;
+const list=T.filter(t=>t&&t.name&&t.name!=='undefined');
+if(!list.length){c.innerHTML='<div class="dm" style="font-size:13px;color:#555;letter-spacing:.08em;padding:40px 0;text-align:center">No flights on the board yet. Go first.</div>';return}
+const groups={};list.forEach(t=>{const k=t.arrDate||'zzz';(groups[k]=groups[k]||[]).push(t)});
+let h='';Object.keys(groups).sort().forEach(k=>{
+const items=groups[k].sort((a,b)=>(a.arrTime||'').localeCompare(b.arrTime||''));
+h+='<div style="margin-bottom:44px"><div class="tleg">'+(k==='zzz'?'Dates to come':esc(tDate(k)))+' · '+items.length+'<span class="rule"></span></div>';
+items.forEach(t=>{
+h+='<div class="tcard"><div class="ga bask" style="background:linear-gradient(135deg,#c9a96e,#8a6d3b);color:#080808;width:38px;height:38px;font-size:17px">'+esc(t.name.charAt(0).toUpperCase())+'</div><div style="flex:1;min-width:0">';
+h+='<div class="bask" style="font-size:19px;color:var(--cream)">'+esc(t.name)+'</div>';
+let inb=[];if(t.arrFlight)inb.push('<b>'+esc(t.arrFlight)+'</b>');if(t.arrTime)inb.push(esc(tTime(t.arrTime)));if(t.arrPort)inb.push(esc(t.arrPort));
+if(inb.length)h+='<div class="tmeta"><span class="tflag">In</span>'+inb.join(' · ')+'</div>';
+let out=[];if(t.depDate)out.push('<b>'+esc(tDate(t.depDate))+'</b>');if(t.depFlight)out.push(esc(t.depFlight));if(t.depTime)out.push(esc(tTime(t.depTime)));if(t.depPort)out.push(esc(t.depPort));
+if(out.length)h+='<div class="tmeta"><span class="tflag">Out</span>'+out.join(' · ')+'</div>';
+if(t.stay)h+='<div class="tmeta"><span class="tflag">Stay</span>'+esc(t.stay)+'</div>';
+if(t.note)h+='<div class="tmeta" style="font-style:italic;color:#5a5a5a">'+esc(t.note)+'</div>';
+h+='</div></div>'});
+h+='</div>'});
+c.innerHTML=h}
+
 document.getElementById('rn').addEventListener('input',ub);
+TF.forEach(id=>{const e=document.getElementById(id);if(e)e.addEventListener('input',st_ub)});
+db&&db.collection('data').doc('travel').onSnapshot(d=>{if(d.exists)T=d.data().list||[];rt()});
 db&&db.collection('data').doc('guests').onSnapshot(d=>{if(d.exists)G=d.data().list||[];uc()});
 db&&db.collection('data').doc('reactions').onSnapshot(d=>{if(d.exists)R=d.data();rr()});
 db&&db.collection('data').doc('comments').onSnapshot(d=>{if(d.exists)C=d.data().list||[];rc()});
