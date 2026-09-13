@@ -393,7 +393,14 @@ function ss(b){sel=b.dataset.s;document.querySelectorAll('.ropt').forEach(x=>x.c
 function tp1(){p1=!p1;document.getElementById('p1c').classList.toggle('on',p1);document.getElementById('p1s').style.display=p1?'block':'none';document.getElementById('p1n').classList.toggle('show',p1);if(p1)document.getElementById('p1i').focus()}
 function ub(){const n=document.getElementById('rn').value.trim();const b=document.getElementById('rsub');if(n&&sel){b.classList.add('rdy');b.disabled=false}else{b.classList.remove('rdy');b.disabled=true}}
 function editRsvp(){const e=window._lastEntry||{};document.getElementById('rf').style.display='block';document.getElementById('rsuc').style.display='none';if(e.name){document.getElementById('rn').value=e.name}if(e.status){sel=e.status;document.querySelectorAll('.ropt').forEach(b=>{b.classList.toggle('sel',b.dataset.s===e.status)});}if(e.plus1){document.getElementById('p1i').value=e.plus1;document.getElementById('p1c').classList.add('on');document.getElementById('p1s').style.display='block';document.getElementById('p1n').classList.add('show');p1=true;}uc();}
-function sr(){const n=document.getElementById('rn').value.trim();if(!n||!sel)return;G=G.filter(g=>g&&g.name&&g.name!=='undefined'&&g.name.toLowerCase()!==n.toLowerCase());const entry={name:n,status:sel,ts:Date.now()};if(p1){const pn=document.getElementById('p1i').value.trim();if(pn)entry.plus1=pn}G.push(entry);db&&db.collection('data').doc('guests').set({list:G});window._lastEntry={name:n,status:sel,plus1:entry.plus1||''};document.getElementById('rf').style.display='none';document.getElementById('rsuc').style.display='block';const t={coming:"I'M SO EXCITED TO SEE YOU!",maybe:"MAYBE..."};t["not coming"]="I'LL MISS YOU";const m={coming:"THANK YOU ✨",maybe:"I can't wait until this maybe turns into a yes."};m["not coming"]="I will miss you, but I'll see you soon anyway. If you change your mind... NYC will always be here.";document.getElementById('st').textContent=t[sel];document.getElementById('sm').textContent=m[sel];uc()}
+function sr(){const n=document.getElementById('rn').value.trim();if(!n||!sel)return;const entry={name:n,status:sel,ts:Date.now()};if(p1){const pn=document.getElementById('p1i').value.trim();if(pn)entry.plus1=pn}
+const rb=document.getElementById('rsub');const rlabel=rb.textContent;rb.textContent='Saving…';rb.disabled=true;
+saveRow('guests',entry,G,function(out,err){
+ rb.textContent=rlabel;rb.disabled=false;
+ if(err){alert("Couldn't save just now — check your connection and try again. Nothing was lost.");return}
+ G=out;window._lastEntry={name:n,status:sel,plus1:entry.plus1||''};
+ document.getElementById('rf').style.display='none';document.getElementById('rsuc').style.display='block';const t={coming:"I'M SO EXCITED TO SEE YOU!",maybe:"MAYBE..."};t["not coming"]="I'LL MISS YOU";const m={coming:"THANK YOU ✨",maybe:"I can't wait until this maybe turns into a yes."};m["not coming"]="I will miss you, but I'll see you soon anyway. If you change your mind... NYC will always be here.";document.getElementById('st').textContent=t[sel];document.getElementById('sm').textContent=m[sel];uc();
+});}
 
 // Guest-level reactions
 function grEmoji(guestName,emoji){const key=guestName.toLowerCase();if(!GR[key])GR[key]={};GR[key][emoji]=(GR[key][emoji]||0)+1;db&&db.collection('data').doc('guest_reactions').set(GR);rg()}
@@ -430,6 +437,23 @@ if(!any)c.innerHTML='<div class="dm" style="font-size:14px;color:#555;letter-spa
 
 function uc(){const confirmed=G.filter(g=>g&&g.name&&g.name!=='undefined'&&g.status==='coming');const c=confirmed.reduce((s,g)=>s+1+(g.plus1?1:0),0);const maybes=G.filter(g=>g&&g.name&&g.name!=='undefined'&&g.status==='maybe').length;const e=document.getElementById('ccount');if(c>0||maybes>0){e.style.display='block';document.getElementById('cnum').textContent=c;document.getElementById('clbl').textContent=c===1?'person confirmed':'people confirmed';const mel=document.getElementById('mnum');if(mel){mel.parentElement.style.display=maybes>0?'inline-block':'none';mel.textContent=maybes;document.getElementById('mlbl').textContent=maybes===1?'maybe':'maybes';}}else e.style.display='none'}
 
+// ═══ SAFE SHARED WRITE ═══
+// Never write the whole list from this browser's copy — it may be stale or
+// empty and would wipe everyone else. Read the server's copy inside a
+// transaction, merge this one row into it, write that back.
+function saveRow(docName,entry,local,done){
+ const key=(entry.name||'').toLowerCase();
+ const merge=arr=>{const kept=(arr||[]).filter(x=>x&&x.name&&x.name.toLowerCase()!==key);kept.push(entry);return kept};
+ if(!db){done(merge(local),null);return}
+ const ref=db.collection('data').doc(docName);
+ db.runTransaction(tx=>tx.get(ref).then(snap=>{
+   const server=(snap.exists&&snap.data().list)||[];
+   const out=merge(server);
+   tx.set(ref,{list:out});
+   return out;
+ })).then(out=>done(out,null)).catch(err=>{console.log('save failed',err);done(null,err)});
+}
+
 // ═══ TRAVEL ═══
 const TF=['tn','tem','tad','tat','tap','ts','tdd','tdt','tdp','tdiet'];
 const TCOLS=[['NAME','name'],['EMAIL','email'],['DATE OF ARRIVAL','arrDate'],['TIME OF ARRIVAL','arrTime'],['AIRPORT OF ARRIVAL','airport'],
@@ -464,11 +488,16 @@ st_ub();try{document.getElementById('tf').scrollIntoView({behavior:'smooth',bloc
 function st_save(){const n=tv('tn');if(!n)return;
 const entry={name:n,email:tv('tem').toLowerCase(),arrDate:tv('tad'),arrTime:tv('tat'),airport:tv('tap').toUpperCase(),stay:tv('ts'),
 help:thelp,depDate:tv('tdd'),depTime:tv('tdt'),depAirport:tv('tdp').toUpperCase(),diet:tv('tdiet'),ts:Date.now()};
-T=T.filter(t=>t&&t.name&&t.name.toLowerCase()!==n.toLowerCase());T.push(entry);window._lastTravel=entry;
-db&&db.collection('data').doc('travel').set({list:T});
-st_show(0,1,1);
-document.getElementById('tsucm').textContent=entry.arrDate?('Landing '+tDate(entry.arrDate)+(entry.arrTime?' at '+tTime(entry.arrTime):'')+'.'):"You're on the table.";
-try{window.scrollTo({top:0,behavior:'smooth'})}catch(e){window.scrollTo(0,0)}rt()}
+const btn=document.getElementById('tsub');const label=btn.textContent;btn.textContent='Saving…';btn.disabled=true;
+saveRow('travel',entry,T,function(out,err){
+ btn.textContent=label;btn.disabled=false;
+ if(err){alert("Couldn't save just now — check your connection and try again. Nothing was lost.");return}
+ T=out;window._lastTravel=entry;
+ st_show(0,1,1);
+ document.getElementById('tsucm').textContent=entry.arrDate?('Landing '+tDate(entry.arrDate)+(entry.arrTime?' at '+tTime(entry.arrTime):'')+'.'):"You're on the table.";
+ try{window.scrollTo({top:0,behavior:'smooth'})}catch(e){window.scrollTo(0,0)}
+ rt();
+});}
 function rt(){const c=document.getElementById('tsec');if(!c)return;
 const hint=document.getElementById('thint');
 const list=(T||[]).filter(t=>t&&t.name&&t.name!=='undefined')
