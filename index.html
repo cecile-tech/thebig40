@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1"><style>:root{color-scheme:light}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>THE BIG 4-0 · New York City</title>
-<meta name="description" content="You're invited. November 20-23, 2026. New York City.">
-<meta property="og:title" content="THE BIG 4-0 · You're Invited">
-<meta property="og:description" content="A weekend in NYC you won't forget. November 2026.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:wght@300;400;500&family=Italiana&family=Playfair+Display:ital,wght@0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
@@ -140,9 +133,78 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
 .taste-label{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:rgba(201,169,110,.6);margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:12px}
 .taste-label::before,.taste-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(201,169,110,.2));max-width:60px}
 .taste-label::after{background:linear-gradient(to left,transparent,rgba(201,169,110,.2))}
+
+/* ═══ SATURDAY NIGHT — New York, black tie, champagne ═══ */
+:root{--champ:#f0e0bd}
+#p-sat{background:#000;position:relative;overflow:hidden}
+#p-sat .wrap{max-width:560px}
+.sat-bubbles{position:absolute;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.sat-bubbles i{position:absolute;bottom:-12px;border-radius:50%;border:1px solid rgba(240,224,189,.45);background:radial-gradient(circle at 30% 30%,rgba(255,247,224,.35),transparent 60%);opacity:0;animation:bub linear infinite}
+@keyframes bub{0%{transform:translateY(0) translateX(0);opacity:0}10%{opacity:.8}50%{transform:translateY(-55vh) translateX(10px)}100%{transform:translateY(-115vh) translateX(-8px);opacity:0}}
+.sat-sign{position:relative;border:1px solid rgba(201,169,110,.5);padding:22px 10px 26px;text-align:center;background:linear-gradient(#0a0a0a,#000);box-shadow:0 0 60px rgba(201,169,110,.12),inset 0 0 40px rgba(201,169,110,.05)}
+.sat-bulbs{position:absolute;left:8px;right:8px;height:8px;background:radial-gradient(circle,#f6ebcf 2px,rgba(201,169,110,.0) 3px) 0 50%/14px 8px repeat-x;filter:drop-shadow(0 0 3px #c9a96e);animation:bulb 1.6s steps(1) infinite}
+.sat-bulbs.t{top:7px}.sat-bulbs.b{bottom:7px;animation-delay:-.8s}
+@keyframes bulb{0%,49%{opacity:1}50%,100%{opacity:.35}}
+.sat-eyebrow{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:rgba(240,224,189,.7);margin:22px 0 18px}
+.sat-title{font-family:'Italiana',serif;font-size:clamp(46px,13vw,84px);line-height:.92;color:#f5f0eb;letter-spacing:.02em;text-shadow:0 0 30px rgba(201,169,110,.25)}
+.sat-title em{display:block;font-style:normal;background:linear-gradient(100deg,#c9a96e,#f6ebcf 45%,#c9a96e 70%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}
+.sat-sub{font-family:'DM Sans',sans-serif;font-weight:300;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b8b0a5;margin:18px 0 4px}
+.sat-coords{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.35em;color:#555;text-transform:uppercase;margin-top:6px}
+.sat-flutes{display:block;width:150px;margin:6px auto 0;filter:drop-shadow(0 0 18px rgba(240,224,189,.2))}
+.sat-spark{animation:spark 2.4s ease-in-out infinite;transform-origin:0 -14px}
+@keyframes spark{0%,100%{opacity:.15;transform:scale(.7)}50%{opacity:1;transform:scale(1.1)}}
+.sat-when{display:flex;align-items:stretch;justify-content:center;margin:34px 0 0;border-top:1px solid rgba(201,169,110,.25);border-bottom:1px solid rgba(201,169,110,.25)}
+.sat-when>div{flex:1;padding:22px 8px}.sat-when>div+div{border-left:1px solid rgba(201,169,110,.25)}
+.sat-when .k{font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:#666;margin-bottom:8px}
+.sat-when .v{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:clamp(28px,7.5vw,40px);line-height:1;color:var(--champ)}
+.sat-when .v small{display:block;font-family:'DM Sans',sans-serif;font-weight:400;font-size:9px;letter-spacing:.3em;color:#8d8477;margin-top:8px;text-transform:uppercase}
+.sat-addr{display:block;text-decoration:none;text-align:center;padding:24px 10px 6px;font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.35;color:#f5f0eb}
+.sat-addr span.dm{display:block;font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,169,110,.75);margin-bottom:10px}
+.sat-addr:hover span.dm:last-child{color:var(--champ)}
+.sat-code{margin:26px auto 2px;max-width:360px}
+.sat-code .lab{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.55em;text-transform:uppercase;color:rgba(240,224,189,.75);display:flex;align-items:center;gap:14px;margin-bottom:14px;padding-left:.55em}
+.sat-code .lab::before,.sat-code .lab::after{content:'';flex:1;height:1px;background:linear-gradient(to right,transparent,rgba(201,169,110,.6))}
+.sat-code .lab::after{background:linear-gradient(to left,transparent,rgba(201,169,110,.6))}
+.sat-code .main{display:flex;align-items:center;justify-content:center;gap:16px;padding:14px 0;border-top:1px solid rgba(201,169,110,.2);border-bottom:1px solid rgba(201,169,110,.2)}
+.sat-code .blk,.sat-code .gld{font-family:'Italiana',serif;font-size:clamp(38px,11vw,50px);line-height:1;letter-spacing:.04em}
+.sat-code .blk{color:#f5f0eb}
+.sat-code .gld{background:linear-gradient(100deg,#a8864a 0%,#f6ebcf 40%,#c9a96e 60%,#f6ebcf 80%,#a8864a 100%);background-size:220% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shim 4.5s ease-in-out infinite}
+@keyframes shim{0%,100%{background-position:0 0}50%{background-position:100% 0}}
+.sat-code .mid{font-family:'DM Sans',sans-serif;font-weight:300;font-size:8px;letter-spacing:.35em;text-transform:uppercase;color:#8d8477;line-height:1.9;text-align:center}
+.sat-bubs circle{fill:rgba(255,247,224,.12);stroke:#f0e0bd;stroke-width:.7;opacity:0;animation:bubup 5.5s ease-out infinite}
+@keyframes bubup{0%{transform:translateY(0) scale(.5);opacity:0}15%{opacity:.95}100%{transform:translateY(-50px) scale(1.3);opacity:0}}
+.sat-stars path{fill:#f6ebcf;opacity:0;transform-box:fill-box;transform-origin:center;animation:stw 3.2s ease-in-out infinite}
+@keyframes stw{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+.sat-sec{margin-top:40px;text-align:center}
+.sat-h{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:rgba(201,169,110,.8);display:flex;align-items:center;gap:14px;margin-bottom:22px}
+.sat-h::before,.sat-h::after{content:'';flex:1;height:1px;background:rgba(201,169,110,.25)}
+.sat-dress{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid rgba(201,169,110,.3)}
+@media(max-width:480px){.sat-dress{grid-template-columns:1fr}.sat-dc+.sat-dc{border-left:0!important;border-top:1px solid rgba(201,169,110,.3)}}
+.sat-dc{padding:30px 14px 26px;position:relative}.sat-dc+.sat-dc{border-left:1px solid rgba(201,169,110,.3)}
+.sat-dc .ic{font-size:30px;display:block;margin-bottom:12px;filter:grayscale(1) brightness(1.6) sepia(.6)}
+.sat-dc .k{font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:.4em;text-transform:uppercase;color:rgba(201,169,110,.7);margin-bottom:8px}
+.sat-dc .v{font-family:'Italiana',serif;font-size:30px;color:#f5f0eb;line-height:1}
+.sat-dc .s{font-family:'DM Sans',sans-serif;font-weight:300;font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:#7d766c;margin-top:12px}
+.sat-pal{display:flex;justify-content:center;gap:26px;margin-top:26px}
+.sat-pal div{text-align:center;font-family:'DM Sans',sans-serif;font-size:8px;letter-spacing:.35em;text-transform:uppercase;color:#777}
+.sat-pal span{display:block;width:34px;height:34px;border-radius:50%;margin:0 auto 10px;box-shadow:0 0 0 1px rgba(201,169,110,.5)}
+.sat-note{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:19px;color:#9a9288;line-height:1.5;margin-top:26px}
+.sat-note b{font-style:normal;color:var(--gold);font-weight:600}
+.sat-champ{border:1px solid rgba(240,224,189,.25);padding:26px 20px;background:radial-gradient(ellipse at 50% 120%,rgba(240,224,189,.12),transparent 70%)}
+.sat-champ .big{font-family:'Italiana',serif;font-size:clamp(28px,7.5vw,38px);color:var(--champ);line-height:1.1}
+.sat-champ .sm{font-family:'DM Sans',sans-serif;font-weight:300;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8d8477;margin-top:14px}
+.sat-skywrap{position:relative;margin:44px -24px 0;height:150px;overflow:hidden}
+.sat-sky{position:absolute;left:0;bottom:0;width:100%;height:100%}
+.sat-sky .w1{animation:tw 3.2s ease-in-out infinite}.sat-sky .w2{animation:tw 4.7s ease-in-out -1.3s infinite}.sat-sky .w3{animation:tw 2.6s ease-in-out -.6s infinite}
+@keyframes tw{0%,100%{opacity:.15}50%{opacity:.95}}
+.sat-tick{font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.35em;text-transform:uppercase;color:#4a4a4a;text-align:center;margin-top:14px}
+.sat-teaser{display:block;width:100%;text-align:center;background:#000;border:1px solid rgba(201,169,110,.4);border-radius:4px;padding:30px 20px 0;position:relative;overflow:hidden;transition:all .4s;cursor:pointer}
+.sat-teaser:hover{border-color:var(--champ);box-shadow:0 0 50px rgba(240,224,189,.15)}
+.sat-teaser .sat-bulbs.t{top:6px}
+.sat-teaser .sky{margin:18px -20px 0;height:70px;position:relative}
+.sat-teaser .sky svg{position:absolute;inset:0;width:100%;height:100%}
 </style>
-</head>
-<body>
+
 <div class="spot"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7HcGQK8QvzKo7pck0rJvCy?utm_source=generator&theme=0" width="100%" height="80" frameBorder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
 
 <!-- ═══ LANDING ═══ -->
@@ -239,57 +301,233 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
       <div class="bask" style="font-size:16px;color:#666;font-weight:400">48 hours in the city that never sleeps</div>
     </div>
     <div class="taste-grid">
-      <div class="taste-card"><span class="taste-emoji">🌆</span><div class="taste-title">Golden hour rooftop</div><div class="taste-sub">Manhattan skyline at dusk</div></div>
-      <div class="taste-card"><span class="taste-emoji">🥂</span><div class="taste-title">The dinner</div><div class="taste-sub">A table worth flying for</div></div>
+      <div class="taste-card"><span class="taste-emoji">🚢</span><div class="taste-title">Golden hour cruise</div><div class="taste-sub">Manhattan skyline at dusk</div></div>
       <div class="taste-card"><span class="taste-emoji">🎶</span><div class="taste-title">Dancing all night</div><div class="taste-sub">Because it wouldn't be us</div></div>
-      <div class="taste-card"><span class="taste-emoji">🌳</span><div class="taste-title">Central Park</div><div class="taste-sub">A walk through the city's heartbeat</div></div>
-      <div class="taste-card"><span class="taste-emoji">🌉</span><div class="taste-title">Brooklyn Bridge walk</div><div class="taste-sub">A classic, non-negotiable</div></div>
-      <div class="taste-card"><span class="taste-emoji">🛍️</span><div class="taste-title">SoHo & Nolita</div><div class="taste-sub">Shop, wander, repeat</div></div>
       <div class="taste-card"><span class="taste-emoji">🚴</span><div class="taste-title">NYC SoulCycle</div><div class="taste-sub">Sweat together, celebrate together</div></div>
-      <div class="taste-card" style="border-color:rgba(201,169,110,.3);background:linear-gradient(135deg,rgba(201,169,110,.07),rgba(8,8,8,0))"><span class="taste-emoji">⛸️</span><div class="taste-title" style="color:var(--gold)">Ice skating</div><div class="taste-sub" style="color:rgba(201,169,110,.5)">Rockefeller Center rink</div></div>
+      <div class="taste-card"><span class="taste-emoji">🎤</span><div class="taste-title">Comedy Cellar</div><div class="taste-sub">Sunday night</div></div>
     </div>
     <div style="text-align:center;padding:20px 0;border-radius:10px;border:1px solid rgba(201,169,110,.08);background:rgba(201,169,110,.02)">
       <div class="dm" style="font-size:10px;letter-spacing:.2em;color:#555;text-transform:uppercase;margin-bottom:8px">Full itinerary revealed to confirmed guests</div>
-      <div style="margin-top:16px;padding:10px 18px;border:1px solid var(--gold);border-radius:6px;display:inline-block"><span class="dm" style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#777">RSVP by</span><span class="bask" style="font-size:22px;font-weight:700;color:var(--gold);letter-spacing:.03em;display:block;line-height:1.1">July 31st</span></div>
     </div>
   </div>
   </div><!-- /photo-col -->
 
   <div class="fu d6" style="margin-bottom:32px">
-    <div style="border:1px solid rgba(201,169,110,.2);border-radius:14px;overflow:hidden;background:rgba(201,169,110,.02)">
-      <div style="position:relative;height:140px;overflow:hidden">
-        <div style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(8,8,8,0) 40%, rgba(8,8,8,.85) 100%)"></div>
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0a1628,#1a2a4a);opacity:.85"></div>
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center">
-          <div style="font-size:48px;letter-spacing:.05em;opacity:.15;font-family:serif;color:#fff">NEW YORK</div>
-        </div>
-        <div style="position:absolute;top:14px;left:16px">
-          <span style="background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:5px 12px;font-family:'DM Sans',sans-serif;font-size:11px;color:#fff;letter-spacing:.05em">✈️ &nbsp;10h55</span>
-        </div>
-        <div style="position:absolute;top:14px;right:16px">
-          <span style="background:rgba(201,169,110,.15);backdrop-filter:blur(8px);border:1px solid rgba(201,169,110,.3);border-radius:20px;padding:5px 12px;font-family:'DM Sans',sans-serif;font-size:11px;color:var(--gold);letter-spacing:.05em">Promo fare</span>
-        </div>
-        <div style="position:absolute;bottom:14px;left:16px">
-          <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:#fff;line-height:1">New York</div>
-          <div style="font-family:'DM Sans',sans-serif;font-size:10px;color:rgba(255,255,255,.5);letter-spacing:.15em;text-transform:uppercase;margin-top:2px">United States</div>
-        </div>
-      </div>
-      <div style="padding:16px 20px;display:flex;align-items:center;justify-content:space-between">
-        <div>
-          <div style="font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:#555;margin-bottom:4px">Round trip · from</div>
-          <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--gold);line-height:1">469 EUR</div><div style="font-family:'DM Sans',sans-serif;font-size:9px;color:#444;letter-spacing:.1em;margin-top:5px">Promo valid until Sept 15th ⏳</div>
-        </div>
-        <a href="https://www.airfrance.fr" target="_blank" style="font-family:'DM Sans',sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#555;text-decoration:none;border:1px solid #222;border-radius:6px;padding:8px 14px;transition:all .3s" onmouseover="this.style.borderColor='#c9a96e';this.style.color='#c9a96e'" onmouseout="this.style.borderColor='#222';this.style.color='#555'">Air France →</a>
-      </div>
-    </div>
+    <button class="sat-teaser" onclick="go('sat')">
+      <span class="sat-bulbs t"></span>
+      <div class="dm" style="font-size:9px;letter-spacing:.5em;text-transform:uppercase;color:rgba(240,224,189,.75);margin:8px 0 14px">Saturday · 8 PM · New York</div>
+      <div style="font-family:'Italiana',serif;font-size:clamp(34px,9vw,50px);color:#f5f0eb;line-height:1;letter-spacing:.03em">Black &amp; <span style="color:var(--gold)">Gold</span></div>
+      <div class="dm" style="font-weight:300;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8d8477;margin-top:14px">Long dresses · Bow ties · Champagne 🥂</div>
+      <div class="dm" style="font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-top:16px">Saturday night →</div>
+      <div class="sky"><svg  viewBox="0 0 684 150" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+<defs><linearGradient id="skg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0e0bd" stop-opacity="0"/><stop offset="1" stop-color="#f0e0bd" stop-opacity=".16"/></linearGradient></defs>
+<rect width="684" height="150" fill="url(#skg)"/>
+<rect x="0" y="96" width="34" height="54" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="30" y="80" width="26" height="70" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="52" y="100" width="30" height="50" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="78" y="70" width="22" height="80" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="98" y="92" width="34" height="58" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="130" y="60" width="28" height="90" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="156" y="88" width="36" height="62" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="190" y="76" width="24" height="74" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="212" y="98" width="40" height="52" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="250" y="64" width="22" height="86" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="268" y="72" width="64" height="78" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="336" y="84" width="26" height="66" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="360" y="100" width="30" height="50" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="388" y="70" width="22" height="80" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="480" y="78" width="30" height="72" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="508" y="58" width="26" height="92" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="532" y="90" width="36" height="60" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="566" y="72" width="34" height="78" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="598" y="96" width="22" height="54" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="618" y="84" width="34" height="66" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="650" y="100" width="30" height="50" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<path d="M274 72 L274 56 L284 56 L284 42 L292 42 L292 30 L297 30 L297 18 L300 18 L300 4 L300 18 L303 18 L303 30 L308 30 L308 42 L316 42 L316 56 L326 56 L326 72 Z" fill="#050505" stroke="rgba(201,169,110,.6)" stroke-width=".7"/><line x1="300" y1="18" x2="300" y2="0" stroke="#c9a96e" stroke-width=".8"/>
+<rect x="412" y="62" width="40" height="88" fill="#050505" stroke="rgba(201,169,110,.45)" stroke-width=".6"/>
+<path d="M414 62 Q432 18 450 62 Z" fill="#050505" stroke="#c9a96e" stroke-width=".8"/>
+<path d="M420 62 Q432 30 444 62 M426 62 Q432 40 438 62" fill="none" stroke="#c9a96e" stroke-width=".7" opacity=".9"/>
+<line x1="432" y1="24" x2="432" y2="4" stroke="#c9a96e" stroke-width=".8"/>
+<rect class="w1" x="4" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="10" y="111" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="16" y="102" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="16" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="22" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="22" y="138" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="28" y="111" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="34" y="86" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="34" y="140" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="40" y="86" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="40" y="140" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="46" y="95" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="46" y="131" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="52" y="86" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="52" y="113" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="62" y="106" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="62" y="115" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="62" y="124" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="68" y="115" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="68" y="133" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="68" y="142" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="82" y="76" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="82" y="85" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="82" y="112" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="82" y="139" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="88" y="76" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="94" y="103" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="94" y="112" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="102" y="143" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="114" y="98" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="114" y="125" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="120" y="98" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="120" y="134" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="120" y="143" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="126" y="107" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="126" y="116" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="126" y="134" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="134" y="111" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="134" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="134" y="129" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="146" y="93" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="146" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="146" y="138" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="152" y="84" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="152" y="129" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="160" y="121" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="160" y="139" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="166" y="94" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="166" y="121" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="166" y="130" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="172" y="94" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="172" y="121" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="178" y="112" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="178" y="121" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="178" y="139" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="200" y="91" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="200" y="100" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="200" y="109" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="200" y="118" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="206" y="127" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="216" y="122" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="222" y="140" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="228" y="140" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="234" y="113" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="234" y="131" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="240" y="113" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="254" y="79" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="254" y="115" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="254" y="142" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="260" y="88" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="260" y="106" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="266" y="79" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="266" y="106" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="266" y="133" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="272" y="78" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="272" y="105" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="272" y="114" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="278" y="78" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="278" y="105" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="278" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="284" y="87" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="290" y="87" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="296" y="78" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="296" y="87" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="302" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="308" y="141" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="314" y="87" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="314" y="141" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="320" y="114" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="320" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="320" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="326" y="114" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="340" y="99" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="346" y="135" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="352" y="126" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="352" y="135" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="358" y="117" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="358" y="135" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="364" y="106" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="370" y="133" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="376" y="142" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="392" y="112" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="398" y="130" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="404" y="85" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="484" y="138" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="490" y="93" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="496" y="93" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="496" y="102" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="496" y="129" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="502" y="84" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="502" y="102" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="502" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="502" y="138" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="512" y="73" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="512" y="136" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="518" y="118" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="518" y="127" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="518" y="136" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="524" y="73" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="524" y="82" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="530" y="64" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="536" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="536" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="536" y="141" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="542" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="542" y="141" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="548" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="554" y="105" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="554" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="560" y="96" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="570" y="78" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="570" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="576" y="78" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="576" y="105" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="576" y="114" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="582" y="87" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="582" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="588" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="602" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="614" y="111" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="628" y="99" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="628" y="108" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="628" y="135" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="640" y="90" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="646" y="117" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="666" y="106" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="666" y="133" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="666" y="142" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="672" y="133" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="672" y="142" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="318" y="108" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="278" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="303" y="84" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="318" y="124" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="283" y="92" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="293" y="124" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="288" y="100" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="313" y="108" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="298" y="84" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="303" y="116" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="278" y="124" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="298" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="298" y="92" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="278" y="92" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="431" y="102" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="446" y="110" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="441" y="110" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="421" y="118" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="446" y="70" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="431" y="110" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="426" y="86" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="436" y="86" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="421" y="134" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="441" y="94" width="2.2" height="3.2" fill="#f0e0bd"/>
+</svg></div>
+    </button>
   </div>
 
-  <div class="fu d7" style="text-align:center;margin-bottom:12px">
-    <p class="tagline" style="margin-bottom:8px">Life is short.</p>
-    <p class="tagline" style="color:var(--gold);">Book the flight. ✈️</p>
-  </div>
   <div class="fu d7" style="margin-bottom:12px"><button class="cta dm" onclick="go('rsvp')">✈️ &nbsp; I'll be there</button></div>
-  <div class="fu d7" style="text-align:center;display:flex;justify-content:center;flex-wrap:wrap;gap:4px"><button class="dm" onclick="go('list')" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:14px 22px;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">See who's coming →</button><span class="dm" style="color:#2a2a2a;align-self:center">·</span><button class="dm" onclick="go('travel')" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:14px 22px;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">My flights ✈️</button></div>
+  <div class="fu d7" style="text-align:center;display:flex;justify-content:center;flex-wrap:wrap;gap:4px"><button class="dm" onclick="go('list')" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:14px 22px;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">See who's coming →</button><span class="dm" style="color:#2a2a2a;align-self:center">·</span><button class="dm" onclick="go('sat')" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:14px 22px;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">Saturday night ✦</button><span class="dm" style="color:#2a2a2a;align-self:center">·</span><button class="dm" onclick="go('travel')" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:14px 22px;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">My flights ✈️</button></div>
 
   <div id="ccount" class="fu d8" style="margin-top:40px;text-align:center;display:none"><span class="bask" style="font-weight:700;color:var(--gold);font-size:32px" id="cnum"></span><span class="dm" style="margin-left:8px;font-size:11px;letter-spacing:.2em;color:#555;text-transform:uppercase" id="clbl"></span><span style="display:none;margin-left:24px" id="maybe-block"><span class="bask" style="font-weight:700;color:#888;font-size:32px" id="mnum"></span><span class="dm" style="margin-left:8px;font-size:11px;letter-spacing:.2em;color:#555;text-transform:uppercase" id="mlbl"></span></span></div>
 
@@ -308,7 +546,6 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
   <div id="rf">
     <div class="bask fu" style="font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(52px,12vw,84px);line-height:.88;margin-bottom:10px">COUNT ME IN</div>
     <div class="fu bask" style="font-style:italic;font-size:24px;font-weight:400;color:var(--gold);margin-bottom:12px">Will you be there?</div>
-    <div class="fu dm" style="font-size:10px;color:#666;letter-spacing:.12em;margin-bottom:48px">RSVP by July 31st</div>
     <div class="fu" style="margin-bottom:36px"><label class="dm" style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#555;display:block;margin-bottom:14px">Your name</label><input id="rn" type="text" placeholder="First & last name" style="width:100%;background:transparent;border:none;border-bottom:1px solid #2a2a2a;color:var(--cream);font-family:'Libre Baskerville',serif;font-size:28px;padding:14px 0;outline:none;transition:border-color .3s" onfocus="this.style.borderBottomColor='#c9a96e'" onblur="this.style.borderBottomColor='#2a2a2a'"></div>
     <div class="fu" style="margin-bottom:36px"><label class="dm" style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#555;display:block;margin-bottom:16px">Your answer</label><div style="display:flex;gap:12px;flex-wrap:wrap"><button class="ropt dm" data-s="coming" onclick="ss(this)">✦ I'll be there</button><button class="ropt dm" data-s="maybe" onclick="ss(this)">◎ Trying my best</button><button class="ropt dm" data-s="not coming" onclick="ss(this)">— Can't make it</button></div></div>
     <div class="plus1-wrap fu"><div class="plus1-toggle" onclick="tp1()"><div class="plus1-check" id="p1c"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#080808" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="display:none" id="p1s"><polyline points="20 6 9 17 4 12"/></svg></div><div><div class="dm" style="font-size:13px;color:var(--cream)">Bringing a +1</div><div class="dm" style="font-size:10px;color:#666;margin-top:2px">Partner, spouse, significant other</div></div></div><div class="plus1-name" id="p1n"><input id="p1i" type="text" placeholder="Their name" onfocus="this.style.borderBottomColor='#c9a96e'" onblur="this.style.borderBottomColor='#333'"></div></div>
@@ -323,6 +560,251 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
   <div class="fu"><div class="bask" style="font-weight:700;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(52px,12vw,76px);line-height:.88;margin-bottom:10px">THE LIST</div><div class="bask" style="font-style:italic;font-size:22px;color:var(--gold);margin-bottom:52px">If your name's not here yet, fix that.</div></div>
   <div id="gsec"></div>
   <div style="margin-top:36px;padding-top:36px;border-top:1px solid var(--faint)"><button class="cta dm" style="max-width:100%" onclick="go('rsvp')">I'll be there</button><button class="dm" onclick="go('travel')" style="display:block;margin:14px auto 0;font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:12px 24px;cursor:pointer;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">Flights &amp; accommodations ✈️ →</button></div>
+</div></div>
+
+<!-- ═══ SATURDAY NIGHT ═══ -->
+<div id="p-sat" class="page"><div class="sat-bubbles"><i style="left:57%;width:4px;height:4px;animation-duration:11.2s;animation-delay:-13.6s"></i><i style="left:36%;width:3px;height:3px;animation-duration:8.7s;animation-delay:-7.6s"></i><i style="left:18%;width:5px;height:5px;animation-duration:9.9s;animation-delay:-5.0s"></i><i style="left:61%;width:3px;height:3px;animation-duration:12.0s;animation-delay:-13.4s"></i><i style="left:38%;width:3px;height:3px;animation-duration:8.5s;animation-delay:-7.4s"></i><i style="left:4%;width:5px;height:5px;animation-duration:7.3s;animation-delay:-6.5s"></i><i style="left:6%;width:6px;height:6px;animation-duration:11.0s;animation-delay:-13.7s"></i><i style="left:71%;width:6px;height:6px;animation-duration:8.1s;animation-delay:-6.5s"></i><i style="left:58%;width:8px;height:8px;animation-duration:7.3s;animation-delay:-14.0s"></i><i style="left:21%;width:6px;height:6px;animation-duration:10.3s;animation-delay:-1.7s"></i><i style="left:51%;width:3px;height:3px;animation-duration:12.8s;animation-delay:-13.2s"></i><i style="left:87%;width:5px;height:5px;animation-duration:14.2s;animation-delay:-5.8s"></i><i style="left:71%;width:4px;height:4px;animation-duration:7.1s;animation-delay:-13.9s"></i><i style="left:85%;width:6px;height:6px;animation-duration:7.5s;animation-delay:-10.3s"></i><i style="left:34%;width:5px;height:5px;animation-duration:11.6s;animation-delay:-1.2s"></i><i style="left:48%;width:5px;height:5px;animation-duration:11.7s;animation-delay:-6.5s"></i><i style="left:66%;width:8px;height:8px;animation-duration:12.4s;animation-delay:-9.0s"></i><i style="left:85%;width:5px;height:5px;animation-duration:7.9s;animation-delay:-10.5s"></i><i style="left:90%;width:3px;height:3px;animation-duration:12.3s;animation-delay:-7.4s"></i><i style="left:50%;width:4px;height:4px;animation-duration:10.8s;animation-delay:-11.5s"></i><i style="left:57%;width:4px;height:4px;animation-duration:11.6s;animation-delay:-9.8s"></i><i style="left:38%;width:5px;height:5px;animation-duration:14.6s;animation-delay:-8.2s"></i><i style="left:54%;width:6px;height:6px;animation-duration:8.0s;animation-delay:-8.9s"></i><i style="left:79%;width:4px;height:4px;animation-duration:8.1s;animation-delay:-2.4s"></i><i style="left:66%;width:3px;height:3px;animation-duration:12.9s;animation-delay:-1.8s"></i><i style="left:42%;width:8px;height:8px;animation-duration:10.0s;animation-delay:-2.9s"></i></div><div class="wrap" style="position:relative;z-index:2">
+  <button class="back dm" onclick="go('land')">← Back</button>
+  <div class="sat-sign fu">
+    <span class="sat-bulbs t"></span><span class="sat-bulbs b"></span>
+    <div class="sat-eyebrow">New York City · The Big 4-0</div>
+    <div class="sat-title">Saturday<em>Night</em></div>
+    <div class="sat-code"><div class="lab">Dress code</div><div class="main"><span class="blk">Black</span><span class="mid">with a<br>touch of</span><span class="gld">Gold</span></div></div>
+    <svg class="sat-flutes" viewBox="-70 -64 140 224" aria-hidden="true"><defs><linearGradient id="chg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6ebcf"/><stop offset="1" stop-color="#cfae6e"/></linearGradient></defs>
+<g transform="translate(-30,24) rotate(13)"><g><path d="M-12 0 C-12 45 -4 62 -3 80 L-3 118 L-12 126 L12 126 L3 118 L3 80 C4 62 12 45 12 0 Z" fill="rgba(240,224,189,.06)" stroke="#c9a96e" stroke-width="1.2"/><path d="M-10.6 16 C-10.6 48 -3.6 63 -2.4 80 L2.4 80 C3.6 63 10.6 48 10.6 16 Z" fill="url(#chg)"/><circle cx="-3" cy="40" r="1.2" fill="#fff7e0" opacity=".8"/><circle cx="3" cy="55" r="1" fill="#fff7e0" opacity=".7"/><circle cx="-1" cy="30" r="1" fill="#fff7e0" opacity=".7"/></g></g><g transform="translate(30,24) rotate(-13)"><g><path d="M-12 0 C-12 45 -4 62 -3 80 L-3 118 L-12 126 L12 126 L3 118 L3 80 C4 62 12 45 12 0 Z" fill="rgba(240,224,189,.06)" stroke="#c9a96e" stroke-width="1.2"/><path d="M-10.6 16 C-10.6 48 -3.6 63 -2.4 80 L2.4 80 C3.6 63 10.6 48 10.6 16 Z" fill="url(#chg)"/><circle cx="-3" cy="40" r="1.2" fill="#fff7e0" opacity=".8"/><circle cx="3" cy="55" r="1" fill="#fff7e0" opacity=".7"/><circle cx="-1" cy="30" r="1" fill="#fff7e0" opacity=".7"/></g></g>
+<g class="sat-bubs"><circle class="bb" cx="-10" cy="8" r="4.1" style="animation-delay:0s"/><circle class="bb" cx="-3" cy="10" r="2.7" style="animation-delay:0.7s"/><circle class="bb" cx="4" cy="9" r="5.1" style="animation-delay:1.4s"/><circle class="bb" cx="11" cy="8" r="3.1" style="animation-delay:2.1s"/><circle class="bb" cx="-6" cy="6" r="2.2" style="animation-delay:2.8s"/><circle class="bb" cx="0" cy="8" r="3.4" style="animation-delay:3.5s"/><circle class="bb" cx="8" cy="10" r="2.4" style="animation-delay:4.2s"/><circle class="bb" cx="-12" cy="10" r="2.5" style="animation-delay:5s"/></g><g class="sat-stars"><path class="st" d="M0 -25.8 L1.6900000000000002 -19.69 L7.800000000000001 -18 L1.6900000000000002 -16.31 L0 -10.2 L-1.6900000000000002 -16.31 L-7.800000000000001 -18 L-1.6900000000000002 -19.69 Z" style="animation-delay:0s"/><path class="st" d="M-20 -10.8 L-18.96 -7.04 L-15.2 -6 L-18.96 -4.96 L-20 -1.1999999999999993 L-21.04 -4.96 L-24.8 -6 L-21.04 -7.04 Z" style="animation-delay:1s"/><path class="st" d="M21 -14.4 L22.17 -10.17 L26.4 -9 L22.17 -7.83 L21 -3.5999999999999996 L19.83 -7.83 L15.6 -9 L19.83 -10.17 Z" style="animation-delay:1.8s"/></g></svg>
+    <div class="sat-when">
+      <div><div class="k">When</div><div class="v">Nov 21<small>Saturday</small></div></div>
+      <div><div class="k">Time</div><div class="v">8 PM<small>Evening</small></div></div>
+      <div><div class="k">Where</div><div class="v">Midtown<small>East 45th St</small></div></div>
+    </div>
+    <a class="sat-addr" href="https://www.google.com/maps/search/?api=1&query=216+East+45th+St+13th+Floor+New+York+NY+10017" target="_blank" rel="noopener"><span class="dm">The address</span>216 East 45th St, 13th Floor<br>New York, NY 10017<span class="dm" style="margin-top:12px">Open in Maps →</span></a>
+  </div>
+
+  <div class="sat-sec fu d2">
+    <div class="sat-h">The dress code</div>
+    <div class="sat-dress">
+      <div class="sat-dc"><span class="ic">👗</span><div class="k">Ladies</div><div class="v">Long dresses</div><div class="s">Floor-length</div></div>
+      <div class="sat-dc"><span class="ic">🎩</span><div class="k">Gentlemen</div><div class="v">Bow tie</div><div class="s">Black tie</div></div>
+    </div>
+    <div class="sat-pal"><div><span style="background:#000"></span>Black</div><div><span style="background:#c9a96e"></span>Gold</div><div><span style="background:#f0e0bd"></span>Champagne</div></div>
+  </div>
+
+  <div class="sat-sec fu d3">
+    <div class="sat-champ">
+      <div class="k" style="font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:rgba(201,169,110,.8);margin-bottom:14px">Cheers</div>
+      <div class="big">Please bring a bottle.</div>
+      <div class="sm">Champagne, or whatever you fancy pouring.</div>
+    </div>
+  </div>
+
+  <div class="sat-skywrap fu d4"><svg class="sat-sky" viewBox="0 0 684 150" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+<defs><linearGradient id="skg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f0e0bd" stop-opacity="0"/><stop offset="1" stop-color="#f0e0bd" stop-opacity=".16"/></linearGradient></defs>
+<rect width="684" height="150" fill="url(#skg)"/>
+<rect x="0" y="96" width="34" height="54" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="30" y="80" width="26" height="70" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="52" y="100" width="30" height="50" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="78" y="70" width="22" height="80" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="98" y="92" width="34" height="58" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="130" y="60" width="28" height="90" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="156" y="88" width="36" height="62" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="190" y="76" width="24" height="74" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="212" y="98" width="40" height="52" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="250" y="64" width="22" height="86" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="268" y="72" width="64" height="78" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="336" y="84" width="26" height="66" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="360" y="100" width="30" height="50" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="388" y="70" width="22" height="80" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="480" y="78" width="30" height="72" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="508" y="58" width="26" height="92" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="532" y="90" width="36" height="60" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="566" y="72" width="34" height="78" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="598" y="96" width="22" height="54" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="618" y="84" width="34" height="66" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<rect x="650" y="100" width="30" height="50" fill="#050505" stroke="rgba(201,169,110,.35)" stroke-width=".6"/>
+<path d="M274 72 L274 56 L284 56 L284 42 L292 42 L292 30 L297 30 L297 18 L300 18 L300 4 L300 18 L303 18 L303 30 L308 30 L308 42 L316 42 L316 56 L326 56 L326 72 Z" fill="#050505" stroke="rgba(201,169,110,.6)" stroke-width=".7"/><line x1="300" y1="18" x2="300" y2="0" stroke="#c9a96e" stroke-width=".8"/>
+<rect x="412" y="62" width="40" height="88" fill="#050505" stroke="rgba(201,169,110,.45)" stroke-width=".6"/>
+<path d="M414 62 Q432 18 450 62 Z" fill="#050505" stroke="#c9a96e" stroke-width=".8"/>
+<path d="M420 62 Q432 30 444 62 M426 62 Q432 40 438 62" fill="none" stroke="#c9a96e" stroke-width=".7" opacity=".9"/>
+<line x1="432" y1="24" x2="432" y2="4" stroke="#c9a96e" stroke-width=".8"/>
+<rect class="w1" x="4" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="10" y="111" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="16" y="102" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="16" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="22" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="22" y="138" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="28" y="111" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="34" y="86" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="34" y="140" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="40" y="86" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="40" y="140" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="46" y="95" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="46" y="131" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="52" y="86" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="52" y="113" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="62" y="106" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="62" y="115" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="62" y="124" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="68" y="115" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="68" y="133" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="68" y="142" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="82" y="76" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="82" y="85" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="82" y="112" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="82" y="139" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="88" y="76" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="94" y="103" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="94" y="112" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="102" y="143" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="114" y="98" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="114" y="125" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="120" y="98" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="120" y="134" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="120" y="143" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="126" y="107" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="126" y="116" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="126" y="134" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="134" y="111" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="134" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="134" y="129" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="146" y="93" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="146" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="146" y="138" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="152" y="84" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="152" y="129" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="160" y="121" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="160" y="139" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="166" y="94" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="166" y="121" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="166" y="130" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="172" y="94" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="172" y="121" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="178" y="112" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="178" y="121" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="178" y="139" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="200" y="91" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="200" y="100" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="200" y="109" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="200" y="118" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="206" y="127" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="216" y="122" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="222" y="140" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="228" y="140" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="234" y="113" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="234" y="131" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="240" y="113" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="254" y="79" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="254" y="115" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="254" y="142" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="260" y="88" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="260" y="106" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="266" y="79" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="266" y="106" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="266" y="133" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="272" y="78" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="272" y="105" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="272" y="114" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="278" y="78" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="278" y="105" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="278" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="284" y="87" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="290" y="87" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="296" y="78" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="296" y="87" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="302" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="308" y="141" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="314" y="87" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="314" y="141" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="320" y="114" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="320" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="320" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="326" y="114" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="340" y="99" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="346" y="135" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="352" y="126" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="352" y="135" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="358" y="117" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="358" y="135" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="364" y="106" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="370" y="133" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="376" y="142" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="392" y="112" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="398" y="130" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="404" y="85" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="484" y="138" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="490" y="93" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="496" y="93" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="496" y="102" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="496" y="129" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="502" y="84" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="502" y="102" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="502" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="502" y="138" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="512" y="73" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="512" y="136" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="518" y="118" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="518" y="127" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="518" y="136" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="524" y="73" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="524" y="82" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="530" y="64" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="536" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="536" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="536" y="141" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="542" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="542" y="141" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="548" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="554" y="105" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="554" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="560" y="96" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="570" y="78" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="570" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="576" y="78" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="576" y="105" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="576" y="114" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="582" y="87" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="582" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="588" y="123" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="602" y="120" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="614" y="111" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="628" y="99" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="628" y="108" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="628" y="135" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="640" y="90" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="646" y="117" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="666" y="106" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="666" y="133" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="666" y="142" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="672" y="133" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="672" y="142" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="318" y="108" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="278" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="303" y="84" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="318" y="124" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="283" y="92" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="293" y="124" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="288" y="100" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="313" y="108" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="298" y="84" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="303" y="116" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="278" y="124" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="298" y="132" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="298" y="92" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="278" y="92" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="431" y="102" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="446" y="110" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="441" y="110" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="421" y="118" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="446" y="70" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w2" x="431" y="110" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="426" y="86" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="436" y="86" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w3" x="421" y="134" width="2.2" height="3.2" fill="#f0e0bd"/>
+<rect class="w1" x="441" y="94" width="2.2" height="3.2" fill="#f0e0bd"/>
+</svg></div>
+
+  <div style="margin-top:36px"><button class="cta dm" style="max-width:100%" onclick="go('rsvp')">I'll be there</button>
+  <button class="dm" onclick="go('list')" style="display:block;margin:14px auto 0;font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:transparent;color:#555;border:none;padding:12px 24px;cursor:pointer;transition:color .3s" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='#555'">See who's coming →</button></div>
 </div></div>
 
 <!-- ═══ TRAVEL ═══ -->
@@ -371,13 +853,13 @@ button{font-family:inherit;cursor:pointer}input{font-family:inherit}
 <script>
 var db=null;
 try{
-firebase.initializeApp({apiKey:"AIzaSyAUNBnZALzSIo3bjgk6BQTge0HFEP9hRLc",authDomain:"the-big-40.firebaseapp.com",projectId:"the-big-40",storageBucket:"the-big-40.firebasestorage.app",messagingSenderId:"53708654298",appId:"1:53708654298:web:05acfc497314d4482747e3"});
-db=firebase.firestore();
+false&&firebase.initializeApp({apiKey:"AIzaSyAUNBnZALzSIo3bjgk6BQTge0HFEP9hRLc",authDomain:"the-big-40.firebaseapp.com",projectId:"the-big-40",storageBucket:"the-big-40.firebasestorage.app",messagingSenderId:"53708654298",appId:"1:53708654298:web:05acfc497314d4482747e3"});
+db=null;
 }catch(e){console.log('Firebase not available, running in offline mode');}
 let G=[],R={},C=[],GR={},GC_data={},T=[],sel=null,cp=0,p1=false;const GC=15;
 // ═══ SHAREABLE LINKS — thebig40.vercel.app/#wheels-down opens the travel page directly ═══
-const HASH={travel:'flights',rsvp:'rsvp',list:'list',land:''};
-const UNHASH={'wheels-down':'travel','wheelsdown':'travel','travel':'travel','flights':'travel','flight':'travel',
+const HASH={sat:'saturday',travel:'flights',rsvp:'rsvp',list:'list',land:''};
+const UNHASH={'saturday':'sat','saturday-night':'sat','black-tie':'sat','party':'sat','sat':'sat','wheels-down':'travel','wheelsdown':'travel','travel':'travel','flights':'travel','flight':'travel',
 'rsvp':'rsvp','count-me-in':'rsvp','list':'list','guests':'list','the-list':'list'};
 function syncHash(n){try{const h=HASH[n];if(h)history.replaceState(null,'','#'+h);
 else history.replaceState(null,'',location.pathname+location.search)}catch(e){}}
@@ -393,14 +875,7 @@ function ss(b){sel=b.dataset.s;document.querySelectorAll('.ropt').forEach(x=>x.c
 function tp1(){p1=!p1;document.getElementById('p1c').classList.toggle('on',p1);document.getElementById('p1s').style.display=p1?'block':'none';document.getElementById('p1n').classList.toggle('show',p1);if(p1)document.getElementById('p1i').focus()}
 function ub(){const n=document.getElementById('rn').value.trim();const b=document.getElementById('rsub');if(n&&sel){b.classList.add('rdy');b.disabled=false}else{b.classList.remove('rdy');b.disabled=true}}
 function editRsvp(){const e=window._lastEntry||{};document.getElementById('rf').style.display='block';document.getElementById('rsuc').style.display='none';if(e.name){document.getElementById('rn').value=e.name}if(e.status){sel=e.status;document.querySelectorAll('.ropt').forEach(b=>{b.classList.toggle('sel',b.dataset.s===e.status)});}if(e.plus1){document.getElementById('p1i').value=e.plus1;document.getElementById('p1c').classList.add('on');document.getElementById('p1s').style.display='block';document.getElementById('p1n').classList.add('show');p1=true;}uc();}
-function sr(){const n=document.getElementById('rn').value.trim();if(!n||!sel)return;const entry={name:n,status:sel,ts:Date.now()};if(p1){const pn=document.getElementById('p1i').value.trim();if(pn)entry.plus1=pn}
-const rb=document.getElementById('rsub');const rlabel=rb.textContent;rb.textContent='Saving…';rb.disabled=true;
-saveRow('guests',entry,G,function(out,err){
- rb.textContent=rlabel;rb.disabled=false;
- if(err){alert("Couldn't save just now — check your connection and try again. Nothing was lost.");return}
- G=out;window._lastEntry={name:n,status:sel,plus1:entry.plus1||''};
- document.getElementById('rf').style.display='none';document.getElementById('rsuc').style.display='block';const t={coming:"I'M SO EXCITED TO SEE YOU!",maybe:"MAYBE..."};t["not coming"]="I'LL MISS YOU";const m={coming:"THANK YOU ✨",maybe:"I can't wait until this maybe turns into a yes."};m["not coming"]="I will miss you, but I'll see you soon anyway. If you change your mind... NYC will always be here.";document.getElementById('st').textContent=t[sel];document.getElementById('sm').textContent=m[sel];uc();
-});}
+function sr(){const n=document.getElementById('rn').value.trim();if(!n||!sel)return;G=G.filter(g=>g&&g.name&&g.name!=='undefined'&&g.name.toLowerCase()!==n.toLowerCase());const entry={name:n,status:sel,ts:Date.now()};if(p1){const pn=document.getElementById('p1i').value.trim();if(pn)entry.plus1=pn}G.push(entry);db&&db.collection('data').doc('guests').set({list:G});window._lastEntry={name:n,status:sel,plus1:entry.plus1||''};document.getElementById('rf').style.display='none';document.getElementById('rsuc').style.display='block';const t={coming:"I'M SO EXCITED TO SEE YOU!",maybe:"MAYBE..."};t["not coming"]="I'LL MISS YOU";const m={coming:"THANK YOU ✨",maybe:"I can't wait until this maybe turns into a yes."};m["not coming"]="I will miss you, but I'll see you soon anyway. If you change your mind... NYC will always be here.";document.getElementById('st').textContent=t[sel];document.getElementById('sm').textContent=m[sel];uc()}
 
 // Guest-level reactions
 function grEmoji(guestName,emoji){const key=guestName.toLowerCase();if(!GR[key])GR[key]={};GR[key][emoji]=(GR[key][emoji]||0)+1;db&&db.collection('data').doc('guest_reactions').set(GR);rg()}
@@ -437,23 +912,6 @@ if(!any)c.innerHTML='<div class="dm" style="font-size:14px;color:#555;letter-spa
 
 function uc(){const confirmed=G.filter(g=>g&&g.name&&g.name!=='undefined'&&g.status==='coming');const c=confirmed.reduce((s,g)=>s+1+(g.plus1?1:0),0);const maybes=G.filter(g=>g&&g.name&&g.name!=='undefined'&&g.status==='maybe').length;const e=document.getElementById('ccount');if(c>0||maybes>0){e.style.display='block';document.getElementById('cnum').textContent=c;document.getElementById('clbl').textContent=c===1?'person confirmed':'people confirmed';const mel=document.getElementById('mnum');if(mel){mel.parentElement.style.display=maybes>0?'inline-block':'none';mel.textContent=maybes;document.getElementById('mlbl').textContent=maybes===1?'maybe':'maybes';}}else e.style.display='none'}
 
-// ═══ SAFE SHARED WRITE ═══
-// Never write the whole list from this browser's copy — it may be stale or
-// empty and would wipe everyone else. Read the server's copy inside a
-// transaction, merge this one row into it, write that back.
-function saveRow(docName,entry,local,done){
- const key=(entry.name||'').toLowerCase();
- const merge=arr=>{const kept=(arr||[]).filter(x=>x&&x.name&&x.name.toLowerCase()!==key);kept.push(entry);return kept};
- if(!db){done(merge(local),null);return}
- const ref=db.collection('data').doc(docName);
- db.runTransaction(tx=>tx.get(ref).then(snap=>{
-   const server=(snap.exists&&snap.data().list)||[];
-   const out=merge(server);
-   tx.set(ref,{list:out});
-   return out;
- })).then(out=>done(out,null)).catch(err=>{console.log('save failed',err);done(null,err)});
-}
-
 // ═══ TRAVEL ═══
 const TF=['tn','tem','tad','tat','tap','ts','tdd','tdt','tdp','tdiet'];
 const TCOLS=[['NAME','name'],['EMAIL','email'],['DATE OF ARRIVAL','arrDate'],['TIME OF ARRIVAL','arrTime'],['AIRPORT OF ARRIVAL','airport'],
@@ -488,16 +946,11 @@ st_ub();try{document.getElementById('tf').scrollIntoView({behavior:'smooth',bloc
 function st_save(){const n=tv('tn');if(!n)return;
 const entry={name:n,email:tv('tem').toLowerCase(),arrDate:tv('tad'),arrTime:tv('tat'),airport:tv('tap').toUpperCase(),stay:tv('ts'),
 help:thelp,depDate:tv('tdd'),depTime:tv('tdt'),depAirport:tv('tdp').toUpperCase(),diet:tv('tdiet'),ts:Date.now()};
-const btn=document.getElementById('tsub');const label=btn.textContent;btn.textContent='Saving…';btn.disabled=true;
-saveRow('travel',entry,T,function(out,err){
- btn.textContent=label;btn.disabled=false;
- if(err){alert("Couldn't save just now — check your connection and try again. Nothing was lost.");return}
- T=out;window._lastTravel=entry;
- st_show(0,1,1);
- document.getElementById('tsucm').textContent=entry.arrDate?('Landing '+tDate(entry.arrDate)+(entry.arrTime?' at '+tTime(entry.arrTime):'')+'.'):"You're on the table.";
- try{window.scrollTo({top:0,behavior:'smooth'})}catch(e){window.scrollTo(0,0)}
- rt();
-});}
+T=T.filter(t=>t&&t.name&&t.name.toLowerCase()!==n.toLowerCase());T.push(entry);window._lastTravel=entry;
+db&&db.collection('data').doc('travel').set({list:T});
+st_show(0,1,1);
+document.getElementById('tsucm').textContent=entry.arrDate?('Landing '+tDate(entry.arrDate)+(entry.arrTime?' at '+tTime(entry.arrTime):'')+'.'):"You're on the table.";
+try{window.scrollTo({top:0,behavior:'smooth'})}catch(e){window.scrollTo(0,0)}rt()}
 function rt(){const c=document.getElementById('tsec');if(!c)return;
 const hint=document.getElementById('thint');
 const list=(T||[]).filter(t=>t&&t.name&&t.name!=='undefined')
@@ -536,6 +989,7 @@ db&&db.collection('data').doc('guest_reactions').onSnapshot(d=>{if(d.exists)GR=d
 db&&db.collection('data').doc('guest_comments').onSnapshot(d=>{if(d.exists)GC_data=d.data();});
 window.addEventListener('hashchange',function(){const p=fromHash();if(p)go(p)});
 (function(){const p=fromHash();if(p)go(p)})();
-ig();rr();
+T=[{"name":"Alex Dupont","email":"alex@dupont.fr","arrDate":"2026-11-19","arrTime":"08:00","airport":"EWR","stay":"Airbnb, Williamsburg","help":"No","depDate":"2026-11-24","depTime":"18:00","depAirport":"LGA","diet":""},{"name":"Cecile Meguere","email":"cecile@airops.com","arrDate":"2026-11-19","arrTime":"16:45","airport":"JFK","stay":"The Standard, East Village","help":"No","depDate":"2026-11-23","depTime":"09:10","depAirport":"JFK","diet":"No shellfish"},{"name":"Nina Roy","email":"nina@roy.fr","arrDate":"2026-11-20","arrTime":"12:00","airport":"JFK","stay":"","help":"Yes","depDate":"2026-11-23","depTime":"14:00","depAirport":"JFK","diet":"Vegetarian"},{"name":"Tom Weber","email":"","arrDate":"","arrTime":"","airport":"","stay":"Friend in Brooklyn","help":"","depDate":"","depTime":"","depAirport":"","diet":"No pork"}];ig();rr();rt();
 </script>
+
 </body></html>
